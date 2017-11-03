@@ -1,9 +1,51 @@
 html, body {
     padding: 0px;
     margin: 0px;
+    width: 100%;
 }
 
-canvas {
-    background: #2b0d3b;
-    position: absolute;
+.mainContainer {
+    width: 100%;
+    background-color: lightgreen;
+    display: flex;
+    height: 659px;
+}
+
+.popupContainer {
+    width: 18%;
+    color: lavender;
+}
+.controlsContainer {
+    width: 15%;
+    background-color: lightgreen;;
+}
+
+.farmContainer, .animalContainer {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 310px;
+}
+
+.farmContainer {
+    background-color: lightgoldenrodyellow;
+}
+
+.animalContainer {
+    background-color: lightpink;
+}
+
+.animalsContainer {
+    width: 50%;
+    background-color: lightgreen;
+}
+
+.animalCardContainer{
+    width: 20%;
+    margin-left: 5%;
+    height: 200px;
+    background-color: lavenderblush;
+    margin-top: 10px;
+    display: inline-flex;
 }
