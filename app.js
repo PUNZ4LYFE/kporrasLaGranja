@@ -30,6 +30,8 @@ function init() {
 
     console.log(animals);
 
+    var animalContainer_title = document.getElementById('animalContainer_title');
+
     /*
     let canvas = document.createElement('canvas');
     document.body.appendChild(canvas);
@@ -61,6 +63,8 @@ function init() {
         var vaca = getVacaByName(event.target.id);
         console.log(vaca);
         event.target.style.background = vaca.color;
+        animalContainer_title.innerHTML = vaca.nombre;
+
     }
 
     function getVacaByName(nombre) {
