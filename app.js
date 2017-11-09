@@ -2,43 +2,60 @@ window.addEventListener('load', init, false);
 
 function init() {
 
-    var cusu = new Animal('Batido', 1, 2, 10, 'mediana', 10, 5, 5, 'ninguna', 'ninguno');
+    //var cusu = new Animal('Batido', 1, 2, 10, 'mediana', 10, 5, 5, 'ninguna', 'ninguno');
     //cusu.comer();
     //cusu.caminar();
     //cusu.beber();
 
     var animals = [];
-    var vaca = new Vaca('Matilde');
-    vaca.color = 'blue';
-    animals.push(vaca);
 
-    vaca = new Vaca('Clotilde');
-    vaca.color = 'green';
-    animals.push(vaca);
+    var cusu = new Gato('Batido', 1, 2, 10, 'mediana', 4, 2, 2, 'ninguna', 'ninguno');
+    cusu.color = 'gray';
+    animals.push(cusu);
 
-    vaca = new Vaca('Florina');
-    vaca.color = 'cyan';
-    animals.push(vaca);
+    var coco = new Perro('Lucas', 1, 2, 10, 'mediano', 4, 2, 2, 'ninguna', 'ninguno');
+    coco.color = 'white';
+    animals.push(coco);
 
-    vaca = new Vaca('Juana');
-    vaca.color = 'brown';
-    animals.push(vaca);
+    var bojack = new Caballo('BoJack', 1, 2, 10, 'grande', 10, 5, 5, 'ninguna', 'ninguno');
+    bojack.color = 'brown';
+    animals.push(bojack);
 
-    vaca = new Vaca('Clara');
-    vaca.color = 'black';
-    animals.push(vaca);
+    var marinette = new Gallina('Marinette', 1, 2, 10, 'pequeña', 2, 1, 1, 1, 'huevo');
+    marinette.color = 'white';
+    animals.push(marinette);
 
-    console.log(animals);
+    var adrien = new Gallina('Adrien', 1, 2, 10, 'pequeño', 2, 1, 1, 1, 'huevo');
+    adrien.color = 'white';
+    animals.push(adrien);
 
-    var animalContainer_title = document.getElementById('animalContainer_title');
+    var donald = new Pato('Donald', 1, 2, 10, 'pequeño', 2, 1, 1, 1, 'huevo');
+    donald.color = 'white';
+    animals.push(donald);
 
-    /*
-    let canvas = document.createElement('canvas');
-    document.body.appendChild(canvas);
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    let context = canvas.getContext('2d');
-    */
+    var daisy = new Pato('Daisy', 1, 2, 10, 'pequeño', 2, 1, 1, 1, 'huevo');
+    daisy.color = 'white';
+    animals.push(daisy);
+
+    var waddles = new Cerdo('Waddles', 1, 2, 10, 'mediano', 4, 2, 2, 3, 'tocino');
+    waddles.color = 'pink';
+    animals.push(waddles);
+
+    var millie = new Vaca('Millie', 1, 2, 10, 'grande', 10, 5, 5, 5, 'leche');
+    millie.color = 'brown';
+    animals.push(millie);
+
+    var inventario = new Granero(10, 20, 30, 40, 50, 60, 70);
+
+    var farmContainer = document.getElementById('farmContainer');
+
+    var datosInventario = inventario.reportarInventario();
+
+    var datosGranja = document.createAttribute('p');
+    datosGranja.innerHTML = datosInventario;
+
+    //farmContainer.appendChild(datosGranja);
+   
 
     var animalsContainer = document.getElementById('animalsContainer');
 
@@ -50,9 +67,8 @@ function init() {
         animal.classList.add('animalCardContainer');
 
         var title = document.createElement('h5');
-        title.style.marginTop = '0px';
-        title.style.marginBottom = '0px';
-        title.innerHTML = animals[i].nombre;;
+        title.innerHTML = animals[i].nombre;
+        title.classList.add('nombreAnimal');
         animal.appendChild(title);
 
         animal.addEventListener('click', onAnimalCardClick, false);
@@ -60,14 +76,25 @@ function init() {
 
     function onAnimalCardClick(event) {
         console.log(event);
-        var vaca = getVacaByName(event.target.id);
-        console.log(vaca);
-        event.target.style.background = vaca.color;
-        animalContainer_title.innerHTML = vaca.nombre;
+        var animal = getAnimalByName(event.target.id);
+        console.log(animal);
+        // event.target.style.background = animal.color;
+        var animalContainer = document.getElementById('animalContainer');
+        //var datosAnimal = document.createElement('p');
+        var datosAnimal = document.getElementById('datosAnimal');
+        datosAnimal.style.fontFamily = 'verdana';
+        datosAnimal.style.color = 'white';
+        datosAnimal.style.padding = '20px';
+        datosAnimal.style.lineHeight = '25px';
+        datosAnimal.innerHTML = '<strong>Nombre: </strong>' + animal.nombre + '<br>' + '<strong>Edad: </strong>' + animal.edad + '<br>' + '<strong>Altura: </strong>' + animal.altura + '<br>' + '<strong>Peso: </strong>' + animal.peso + '<br>' + '<strong>Tamaño: </strong>' + animal.tamanno + '<br>' + '<strong>Capacidad Estómago: </strong>' + animal.capacidadEstomago + '<br>' + '<strong>Capacidad Consumo de Agua: </strong>' + animal.capacidadConsumoAgua + '<br>' + '<strong>Capacidad Consumo de Alimento: </strong>' + animal.capacidadConsumoAlimento + '<br>' + '<strong>Capacidad de Producción: </strong>' + animal.capacidadProduccion + '<br>' + '<strong>Tipo de Producción: </strong>' + animal.tipoDeProduccion;
+        animalContainer.appendChild(datosAnimal);
 
+
+
+        
     }
 
-    function getVacaByName(nombre) {
+    function getAnimalByName(nombre) {
         for (var i = 0; i < animals.length; i++) {
             if (animals[i].nombre === nombre) {
                 return animals[i];
@@ -75,4 +102,5 @@ function init() {
         }
         return null;
     }
+
 }
