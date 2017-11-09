@@ -8,9 +8,9 @@ var Animal = (
             this.tamanno = ptamanno;
             this.capacidadEstomago = pcapacidadEstomago;
             this.capacidadConsumoAgua = pcapacidadConsumoAgua;
-            this.capacidadCOnsumoAlimento = pcapacidadConsumoAlimento;
+            this.capacidadConsumoAlimento = pcapacidadConsumoAlimento;
             this.capacidadProduccion = pcapacidadProduccion;
-            this.tipodeProduccion = ptipodeProduccion;
+            this.tipoDeProduccion = ptipodeProduccion;
 		}
 		//Class Methods
 		Animal.prototype.comer = function () {
