@@ -51,10 +51,10 @@ function init() {
 
     var datosInventario = inventario.reportarInventario();
 
-    var datosGranja = document.createAttribute('p');
+    var datosGranja = document.createElement('p');
     datosGranja.innerHTML = datosInventario;
 
-    //farmContainer.appendChild(datosGranja);
+    farmContainer.appendChild(datosGranja);
    
 
     var animalsContainer = document.getElementById('animalsContainer');
