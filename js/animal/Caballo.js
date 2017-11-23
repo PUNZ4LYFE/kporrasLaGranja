@@ -3,6 +3,7 @@ var Caballo = (
 		function Caballo(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
                   Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
                   this.color;
+                  this.tipo = 'caballo';
             /*this.nombre = pnombre;
             this.edad = pedad;
             this.altura = paltura;
