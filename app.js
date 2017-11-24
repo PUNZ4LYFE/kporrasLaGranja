@@ -49,7 +49,7 @@ function init() {
     animals.push(millie);
     millie.tipo = 'vaca';
 
-    
+
     var inventario = new Granero(5000, 10, 20, 30, 40, 50, 60, 70);
 
     generarTarjetas();
@@ -68,7 +68,7 @@ function init() {
     document.getElementById('comprarMaiz').addEventListener('click', formularioMaiz);
 
 
-    function mostrarDatosGranja(){
+    function mostrarDatosGranja() {
         var farmContainer = document.getElementById('farmContainer');
         var datosGranja = document.getElementById('datosGranja');
         datosGranja.innerHTML = inventario.reportarInventario();
@@ -76,7 +76,7 @@ function init() {
         farmContainer.appendChild(datosGranja);
     }
 
-    function generarBotones(){
+    function generarBotones() {
         var botonComprar = document.getElementById('botonComprar');
         botonComprar.type = 'button';
         botonComprar.value = 'Comprar';
@@ -95,23 +95,23 @@ function init() {
         farmContainer.appendChild(botonVender);
     }
 
-    function mostrarCompras(){
+    function mostrarCompras() {
         document.getElementById('popupVender').classList.add('hidden');
         document.getElementById('popupComprar').classList.remove('hidden');
     }
 
-    function mostrarVentas(){
+    function mostrarVentas() {
         document.getElementById('popupComprar').classList.add('hidden');
         document.getElementById('popupVender').classList.remove('hidden');
         document.getElementById('popupFormularioVentaHuevos').classList.add('hidden');
         document.getElementById('popupFormularioVentaLeche').classList.add('hidden');
         document.getElementById('popupFormularioVentaTocino').classList.add('hidden');
     }
-   
-    function generarTarjetas(){
+
+    function generarTarjetas() {
         var animalsContainer = document.getElementById('animalsContainer');
 
-         for (var i = 0; i < animals.length; i++) {
+        for (var i = 0; i < animals.length; i++) {
 
             var animal = document.createElement('div');
             animalsContainer.appendChild(animal);
@@ -124,55 +124,55 @@ function init() {
             title.classList.add('nombreAnimal');
             animal.appendChild(title);
 
-            switch(animals[i].tipo){
+            switch (animals[i].tipo) {
                 case 'gato':
                     var foto = document.createElement("img");
                     foto.setAttribute("src", "../img/cat.svg");
                     foto.classList.add('svg');
                     animal.appendChild(foto);
-                break;
+                    break;
 
                 case 'perro':
                     var foto = document.createElement("img");
                     foto.setAttribute("src", "../img/dog.svg");
                     foto.classList.add('svg');
                     animal.appendChild(foto);
-                break;
+                    break;
 
                 case 'vaca':
                     var foto = document.createElement("img");
                     foto.setAttribute("src", "../img/cow.svg");
                     foto.classList.add('svg');
                     animal.appendChild(foto);
-                break; 
+                    break;
 
                 case 'gallina':
                     var foto = document.createElement("img");
                     foto.setAttribute("src", "../img/hen.svg");
                     foto.classList.add('svg');
                     animal.appendChild(foto);
-                break; 
+                    break;
 
                 case 'pato':
                     var foto = document.createElement("img");
                     foto.setAttribute("src", "../img/duck.svg");
                     foto.classList.add('svg');
                     animal.appendChild(foto);
-                break;
+                    break;
 
                 case 'cerdo':
                     var foto = document.createElement("img");
                     foto.setAttribute("src", "../img/pig.svg");
                     foto.classList.add('svg');
                     animal.appendChild(foto);
-                break;
+                    break;
 
                 case 'caballo':
                     var foto = document.createElement("img");
                     foto.setAttribute("src", "../img/horse.svg");
                     foto.classList.add('svg');
                     animal.appendChild(foto);
-                break;
+                    break;
 
             }
 
@@ -195,7 +195,7 @@ function init() {
         generarBotonesAnimales();
     }
 
-    function generarBotonesAnimales(){
+    function generarBotonesAnimales() {
         var botonProducir = document.getElementById('botonProducir');
         document.getElementById('botonProducir').addEventListener('click', recogerProducto);
         botonProducir.classList.remove('hidden');
@@ -203,7 +203,7 @@ function init() {
         botonProducir.id = 'botonProducir';
         botonProducir.classList.add('compraVenta');
         botonProducir.style.width = '150px';
-        
+
         var botonBeber = document.getElementById('botonBeber');
         botonBeber.classList.remove('hidden');
         botonBeber.value = 'Beber';
@@ -230,36 +230,36 @@ function init() {
         return null;
     }
 
-    function formularioVaca(){
+    function formularioVaca() {
         document.getElementById('popupComprar').classList.add('hidden');
         document.getElementById('popupFormularioVaca').classList.remove('hidden');
-       var inputsFormulario = [];
-        inputsFormulario[0] =  document.getElementById('nombreVaca');
+        var inputsFormulario = [];
+        inputsFormulario[0] = document.getElementById('nombreVaca');
         inputsFormulario[0].placeholder = 'Nombre del animal';
-        inputsFormulario[1] =  document.getElementById('edadVaca');
-        inputsFormulario[1].placeholder = 'Edad del animal';
-        inputsFormulario[2] =  document.getElementById('alturaVaca');
+        inputsFormulario[1] = document.getElementById('edadVaca');
+        inputsFormulario[1].placeholder = 'Edad del animal'; //Llamar el metodo y pasar dos parametros min y max
+        inputsFormulario[2] = document.getElementById('alturaVaca');
         inputsFormulario[2].placeholder = 'Altura del animal';
-        inputsFormulario[3] =  document.getElementById('pesoVaca');
+        inputsFormulario[3] = document.getElementById('pesoVaca');
         inputsFormulario[3].placeholder = 'Peso del animal';
-        inputsFormulario[4] =  document.getElementById('tamannoVaca');
+        inputsFormulario[4] = document.getElementById('tamannoVaca');
         inputsFormulario[4].placeholder = 'Tamaño del animal';
-        inputsFormulario[5] =  document.getElementById('estomagoVaca');
+        inputsFormulario[5] = document.getElementById('estomagoVaca');
         inputsFormulario[5].placeholder = 'Capacidad del estómago';
-        inputsFormulario[6] =  document.getElementById('aguaVaca');
+        inputsFormulario[6] = document.getElementById('aguaVaca');
         inputsFormulario[6].placeholder = 'Capacidad de consumo de agua';
-        inputsFormulario[7] =  document.getElementById('alimentoVaca');
+        inputsFormulario[7] = document.getElementById('alimentoVaca');
         inputsFormulario[7].placeholder = 'Capacidad de consumo de alimento';
-        inputsFormulario[8] =  document.getElementById('produccionVaca');
+        inputsFormulario[8] = document.getElementById('produccionVaca');
         inputsFormulario[8].placeholder = 'Capacidad de producción';
-        inputsFormulario[9] =  document.getElementById('tipoProduccionVaca');
+        inputsFormulario[9] = document.getElementById('tipoProduccionVaca');
         inputsFormulario[9].placeholder = 'Tipo de producción';
-        for(var i = 0; i <= inputsFormulario.length - 1; i++){
-                inputsFormulario[i].type = 'text';
-                inputsFormulario[i].style.width = '220px';
-                inputsFormulario[i].style.marginTop = '10px';
-                inputsFormulario[i].style.marginLeft = '15px';
-                inputsFormulario[i].style.padding = '5px';
+        for (var i = 0; i <= inputsFormulario.length - 1; i++) {
+            inputsFormulario[i].type = 'text';
+            inputsFormulario[i].style.width = '220px';
+            inputsFormulario[i].style.marginTop = '10px';
+            inputsFormulario[i].style.marginLeft = '15px';
+            inputsFormulario[i].style.padding = '5px';
         }
 
         var botonComprarVaca = document.getElementById('botonComprarVaca');
@@ -271,36 +271,36 @@ function init() {
         botonComprarVaca.addEventListener('click', comprarVaca);
     }
 
-    function formularioGallina(){
+    function formularioGallina() {
         document.getElementById('popupComprar').classList.add('hidden');
         document.getElementById('popupFormularioGallina').classList.remove('hidden');
-       var inputsFormulario = [];
-        inputsFormulario[0] =  document.getElementById('nombreGallina');
+        var inputsFormulario = [];
+        inputsFormulario[0] = document.getElementById('nombreGallina');
         inputsFormulario[0].placeholder = 'Nombre del animal';
-        inputsFormulario[1] =  document.getElementById('edadGallina');
-        inputsFormulario[1].placeholder = 'Edad del animal';
-        inputsFormulario[2] =  document.getElementById('alturaGallina');
+        inputsFormulario[1] = document.getElementById('edadGallina');
+        inputsFormulario[1].placeholder = randomInt(1, 10);
+        inputsFormulario[2] = document.getElementById('alturaGallina');
         inputsFormulario[2].placeholder = 'Altura del animal';
-        inputsFormulario[3] =  document.getElementById('pesoGallina');
+        inputsFormulario[3] = document.getElementById('pesoGallina');
         inputsFormulario[3].placeholder = 'Peso del animal';
-        inputsFormulario[4] =  document.getElementById('tamannoGallina');
+        inputsFormulario[4] = document.getElementById('tamannoGallina');
         inputsFormulario[4].placeholder = 'Tamaño del animal';
-        inputsFormulario[5] =  document.getElementById('estomagoGallina');
+        inputsFormulario[5] = document.getElementById('estomagoGallina');
         inputsFormulario[5].placeholder = 'Capacidad del estómago';
-        inputsFormulario[6] =  document.getElementById('aguaGallina');
+        inputsFormulario[6] = document.getElementById('aguaGallina');
         inputsFormulario[6].placeholder = 'Capacidad de consumo de agua';
-        inputsFormulario[7] =  document.getElementById('alimentoGallina');
+        inputsFormulario[7] = document.getElementById('alimentoGallina');
         inputsFormulario[7].placeholder = 'Capacidad de consumo de alimento';
-        inputsFormulario[8] =  document.getElementById('produccionGallina');
+        inputsFormulario[8] = document.getElementById('produccionGallina');
         inputsFormulario[8].placeholder = 'Capacidad de producción';
-        inputsFormulario[9] =  document.getElementById('tipoProduccionGallina');
+        inputsFormulario[9] = document.getElementById('tipoProduccionGallina');
         inputsFormulario[9].placeholder = 'Tipo de producción';
-        for(var i = 0; i <= inputsFormulario.length - 1; i++){
-                inputsFormulario[i].type = 'text';
-                inputsFormulario[i].style.width = '220px';
-                inputsFormulario[i].style.marginTop = '10px';
-                inputsFormulario[i].style.marginLeft = '15px';
-                inputsFormulario[i].style.padding = '5px';
+        for (var i = 0; i <= inputsFormulario.length - 1; i++) {
+            inputsFormulario[i].type = 'text';
+            inputsFormulario[i].style.width = '220px';
+            inputsFormulario[i].style.marginTop = '10px';
+            inputsFormulario[i].style.marginLeft = '15px';
+            inputsFormulario[i].style.padding = '5px';
         }
 
         var botonComprarGallina = document.getElementById('botonComprarGallina');
@@ -311,36 +311,36 @@ function init() {
         botonComprarGallina.addEventListener('click', comprarGallina);
     }
 
-    function formularioCerdo(){
+    function formularioCerdo() {
         document.getElementById('popupComprar').classList.add('hidden');
         document.getElementById('popupFormularioCerdo').classList.remove('hidden');
-       var inputsFormulario = [];
-        inputsFormulario[0] =  document.getElementById('nombreCerdo');
+        var inputsFormulario = [];
+        inputsFormulario[0] = document.getElementById('nombreCerdo');
         inputsFormulario[0].placeholder = 'Nombre del animal';
-        inputsFormulario[1] =  document.getElementById('edadCerdo');
+        inputsFormulario[1] = document.getElementById('edadCerdo');
         inputsFormulario[1].placeholder = 'Edad del animal';
-        inputsFormulario[2] =  document.getElementById('alturaCerdo');
+        inputsFormulario[2] = document.getElementById('alturaCerdo');
         inputsFormulario[2].placeholder = 'Altura del animal';
-        inputsFormulario[3] =  document.getElementById('pesoCerdo');
+        inputsFormulario[3] = document.getElementById('pesoCerdo');
         inputsFormulario[3].placeholder = 'Peso del animal';
-        inputsFormulario[4] =  document.getElementById('tamannoCerdo');
+        inputsFormulario[4] = document.getElementById('tamannoCerdo');
         inputsFormulario[4].placeholder = 'Tamaño del animal';
-        inputsFormulario[5] =  document.getElementById('estomagoCerdo');
+        inputsFormulario[5] = document.getElementById('estomagoCerdo');
         inputsFormulario[5].placeholder = 'Capacidad del estómago';
-        inputsFormulario[6] =  document.getElementById('aguaCerdo');
+        inputsFormulario[6] = document.getElementById('aguaCerdo');
         inputsFormulario[6].placeholder = 'Capacidad de consumo de agua';
-        inputsFormulario[7] =  document.getElementById('alimentoCerdo');
+        inputsFormulario[7] = document.getElementById('alimentoCerdo');
         inputsFormulario[7].placeholder = 'Capacidad de consumo de alimento';
-        inputsFormulario[8] =  document.getElementById('produccionCerdo');
+        inputsFormulario[8] = document.getElementById('produccionCerdo');
         inputsFormulario[8].placeholder = 'Capacidad de producción';
-        inputsFormulario[9] =  document.getElementById('tipoProduccionCerdo');
+        inputsFormulario[9] = document.getElementById('tipoProduccionCerdo');
         inputsFormulario[9].placeholder = 'Tipo de producción';
-        for(var i = 0; i <= inputsFormulario.length - 1; i++){
-                inputsFormulario[i].type = 'text';
-                inputsFormulario[i].style.width = '220px';
-                inputsFormulario[i].style.marginTop = '10px';
-                inputsFormulario[i].style.marginLeft = '15px';
-                inputsFormulario[i].style.padding = '5px';
+        for (var i = 0; i <= inputsFormulario.length - 1; i++) {
+            inputsFormulario[i].type = 'text';
+            inputsFormulario[i].style.width = '220px';
+            inputsFormulario[i].style.marginTop = '10px';
+            inputsFormulario[i].style.marginLeft = '15px';
+            inputsFormulario[i].style.padding = '5px';
         }
 
         var botonComprarCerdo = document.getElementById('botonComprarCerdo');
@@ -354,26 +354,26 @@ function init() {
 
 
 
-    function comprarVaca(){
+    function comprarVaca() {
         document.getElementById('popupFormularioVaca').classList.add('hidden');
-        if(inventario.cantidadDinero >= 500){
-            console.log('ayy lmao'); 
+        if (inventario.cantidadDinero >= 500) {
+            console.log('ayy lmao');
             var datosFormulario = [];
-            datosFormulario[0] =  document.getElementById('nombreVaca').value;
-            datosFormulario[1] =  document.getElementById('edadVaca').value;
-            datosFormulario[2] =  document.getElementById('alturaVaca').value;
-            datosFormulario[3] =  document.getElementById('pesoVaca').value;
-            datosFormulario[4] =  document.getElementById('tamannoVaca').value;
-            datosFormulario[5] =  document.getElementById('estomagoVaca').value;
-            datosFormulario[6] =  document.getElementById('aguaVaca').value;
-            datosFormulario[7] =  document.getElementById('alimentoVaca').value;
-            datosFormulario[8] =  document.getElementById('produccionVaca').value;
-            datosFormulario[9] =  document.getElementById('tipoProduccionVaca').value;
-            
-            var vacaComprada = new Vaca(datosFormulario[0], datosFormulario[1], datosFormulario[2] ,datosFormulario[3], datosFormulario[4], datosFormulario[5], datosFormulario[6], datosFormulario[7], datosFormulario[8],datosFormulario[9]);
+            datosFormulario[0] = document.getElementById('nombreVaca').value;
+            datosFormulario[1] = document.getElementById('edadVaca').value;
+            datosFormulario[2] = document.getElementById('alturaVaca').value;
+            datosFormulario[3] = document.getElementById('pesoVaca').value;
+            datosFormulario[4] = document.getElementById('tamannoVaca').value;
+            datosFormulario[5] = document.getElementById('estomagoVaca').value;
+            datosFormulario[6] = document.getElementById('aguaVaca').value;
+            datosFormulario[7] = document.getElementById('alimentoVaca').value;
+            datosFormulario[8] = document.getElementById('produccionVaca').value;
+            datosFormulario[9] = document.getElementById('tipoProduccionVaca').value;
+
+            var vacaComprada = new Vaca(datosFormulario[0], datosFormulario[1], datosFormulario[2], datosFormulario[3], datosFormulario[4], datosFormulario[5], datosFormulario[6], datosFormulario[7], datosFormulario[8], datosFormulario[9]);
             vacaComprada.color = 'brown';
             animals.push(vacaComprada);
-            
+
             var tarjetaVacaComprada = document.createElement('div');
             animalsContainer.appendChild(tarjetaVacaComprada);
             tarjetaVacaComprada.id = vacaComprada.nombre;
@@ -394,31 +394,31 @@ function init() {
             inventario.cantidadDinero = inventario.cantidadDinero - vacaComprada.precio;
 
             mostrarDatosGranja();
-        } else{
+        } else {
             alert('dont');
         }
     }
 
-    function comprarGallina(){
+    function comprarGallina() {
         document.getElementById('popupFormularioGallina').classList.add('hidden');
-        if(inventario.cantidadDinero >= 500){
-            console.log('ayy lmao'); 
+        if (inventario.cantidadDinero >= 500) {
+            console.log('ayy lmao');
             var datosFormulario = [];
-            datosFormulario[0] =  document.getElementById('nombreGallina').value;
-            datosFormulario[1] =  document.getElementById('edadGallina').value;
-            datosFormulario[2] =  document.getElementById('alturaGallina').value;
-            datosFormulario[3] =  document.getElementById('pesoGallina').value;
-            datosFormulario[4] =  document.getElementById('tamannoGallina').value;
-            datosFormulario[5] =  document.getElementById('estomagoGallina').value;
-            datosFormulario[6] =  document.getElementById('aguaGallina').value;
-            datosFormulario[7] =  document.getElementById('alimentoGallina').value;
-            datosFormulario[8] =  document.getElementById('produccionGallina').value;
-            datosFormulario[9] =  document.getElementById('tipoProduccionGallina').value;
-            
-            var gallinaComprada = new Gallina(datosFormulario[0], datosFormulario[1], datosFormulario[2] ,datosFormulario[3], datosFormulario[4], datosFormulario[5], datosFormulario[6], datosFormulario[7], datosFormulario[8],datosFormulario[9]);
+            datosFormulario[0] = document.getElementById('nombreGallina').value;
+            datosFormulario[1] = document.getElementById('edadGallina').value;
+            datosFormulario[2] = document.getElementById('alturaGallina').value;
+            datosFormulario[3] = document.getElementById('pesoGallina').value;
+            datosFormulario[4] = document.getElementById('tamannoGallina').value;
+            datosFormulario[5] = document.getElementById('estomagoGallina').value;
+            datosFormulario[6] = document.getElementById('aguaGallina').value;
+            datosFormulario[7] = document.getElementById('alimentoGallina').value;
+            datosFormulario[8] = document.getElementById('produccionGallina').value;
+            datosFormulario[9] = document.getElementById('tipoProduccionGallina').value;
+
+            var gallinaComprada = new Gallina(datosFormulario[0], datosFormulario[1], datosFormulario[2], datosFormulario[3], datosFormulario[4], datosFormulario[5], datosFormulario[6], datosFormulario[7], datosFormulario[8], datosFormulario[9]);
             gallinaComprada.color = 'brown';
             animals.push(gallinaComprada);
-            
+
             var tarjetaGallinaComprada = document.createElement('div');
             animalsContainer.appendChild(tarjetaGallinaComprada);
             tarjetaGallinaComprada.id = gallinaComprada.nombre;
@@ -441,31 +441,31 @@ function init() {
             mostrarDatosGranja();
 
             document.getElementById('popupFormularioCompraGallina').reset();
-        } else{
+        } else {
             alert('dont');
         }
     }
 
-    function comprarCerdo(){
+    function comprarCerdo() {
         document.getElementById('popupFormularioCerdo').classList.add('hidden');
-        if(inventario.cantidadDinero >= 500){
-            console.log('ayy lmao'); 
+        if (inventario.cantidadDinero >= 500) {
+            console.log('ayy lmao');
             var datosFormulario = [];
-            datosFormulario[0] =  document.getElementById('nombreCerdo').value;
-            datosFormulario[1] =  document.getElementById('edadCerdo').value;
-            datosFormulario[2] =  document.getElementById('alturaCerdo').value;
-            datosFormulario[3] =  document.getElementById('pesoCerdo').value;
-            datosFormulario[4] =  document.getElementById('tamannoCerdo').value;
-            datosFormulario[5] =  document.getElementById('estomagoCerdo').value;
-            datosFormulario[6] =  document.getElementById('aguaCerdo').value;
-            datosFormulario[7] =  document.getElementById('alimentoCerdo').value;
-            datosFormulario[8] =  document.getElementById('produccionCerdo').value;
-            datosFormulario[9] =  document.getElementById('tipoProduccionCerdo').value;
-            
-            var cerdoComprada = new Cerdo(datosFormulario[0], datosFormulario[1], datosFormulario[2] ,datosFormulario[3], datosFormulario[4], datosFormulario[5], datosFormulario[6], datosFormulario[7], datosFormulario[8],datosFormulario[9]);
+            datosFormulario[0] = document.getElementById('nombreCerdo').value;
+            datosFormulario[1] = document.getElementById('edadCerdo').value;
+            datosFormulario[2] = document.getElementById('alturaCerdo').value;
+            datosFormulario[3] = document.getElementById('pesoCerdo').value;
+            datosFormulario[4] = document.getElementById('tamannoCerdo').value;
+            datosFormulario[5] = document.getElementById('estomagoCerdo').value;
+            datosFormulario[6] = document.getElementById('aguaCerdo').value;
+            datosFormulario[7] = document.getElementById('alimentoCerdo').value;
+            datosFormulario[8] = document.getElementById('produccionCerdo').value;
+            datosFormulario[9] = document.getElementById('tipoProduccionCerdo').value;
+
+            var cerdoComprada = new Cerdo(datosFormulario[0], datosFormulario[1], datosFormulario[2], datosFormulario[3], datosFormulario[4], datosFormulario[5], datosFormulario[6], datosFormulario[7], datosFormulario[8], datosFormulario[9]);
             cerdoComprada.color = 'brown';
             animals.push(cerdoComprada);
-            
+
             var tarjetaCerdoComprada = document.createElement('div');
             animalsContainer.appendChild(tarjetaCerdoComprada);
             tarjetaCerdoComprada.id = cerdoComprada.nombre;
@@ -488,13 +488,13 @@ function init() {
             mostrarDatosGranja();
             document.getElementById('popupFormularioCerdo').reset();
 
-        } else{
+        } else {
             alert('dont');
         }
 
     }
 
-    function formularioAlimento(){
+    function formularioAlimento() {
         document.getElementById('popupComprar').classList.add('hidden');
         document.getElementById('popupFormularioCompraAlimento').classList.remove('hidden');
         document.getElementById('alimentoParaComprar').type = 'number';
@@ -506,9 +506,9 @@ function init() {
 
     }
 
-    function comprarAlimento(){
-        var cantAComprar =  Number(document.getElementById('alimentoParaComprar').value);
-        if(inventario.cantidadDinero > 5){
+    function comprarAlimento() {
+        var cantAComprar = Number(document.getElementById('alimentoParaComprar').value);
+        if (inventario.cantidadDinero > 5) {
             inventario.cantidadAlimento = inventario.cantidadAlimento + cantAComprar;
             inventario.cantidadDinero = inventario.cantidadDinero - (cantAComprar * 5);
             mostrarDatosGranja();
@@ -518,7 +518,7 @@ function init() {
         }
     }
 
-    function formularioPasto(){
+    function formularioPasto() {
         document.getElementById('popupComprar').classList.add('hidden');
         document.getElementById('popupFormularioCompraPasto').classList.remove('hidden');
         document.getElementById('pastoParaComprar').type = 'number';
@@ -530,9 +530,9 @@ function init() {
 
     }
 
-    function comprarPasto(){
-        var cantAComprar =  Number(document.getElementById('pastoParaComprar').value);
-        if(inventario.cantidadDinero > 5){
+    function comprarPasto() {
+        var cantAComprar = Number(document.getElementById('pastoParaComprar').value);
+        if (inventario.cantidadDinero > 5) {
             inventario.cantidadPasto = inventario.cantidadPasto + cantAComprar;
             inventario.cantidadDinero = inventario.cantidadDinero - (cantAComprar * 5);
             mostrarDatosGranja();
@@ -542,7 +542,7 @@ function init() {
         }
     }
 
-    function formularioMaiz(){
+    function formularioMaiz() {
         document.getElementById('popupComprar').classList.add('hidden');
         document.getElementById('popupFormularioCompraMaiz').classList.remove('hidden');
         document.getElementById('maizParaComprar').type = 'number';
@@ -554,9 +554,9 @@ function init() {
 
     }
 
-    function comprarMaiz(){
-        var cantAComprar =  Number(document.getElementById('maizParaComprar').value);
-        if(inventario.cantidadDinero > 5){
+    function comprarMaiz() {
+        var cantAComprar = Number(document.getElementById('maizParaComprar').value);
+        if (inventario.cantidadDinero > 5) {
             inventario.cantidadMaiz = inventario.cantidadMaiz + cantAComprar;
             inventario.cantidadDinero = inventario.cantidadDinero - (cantAComprar * 5);
             mostrarDatosGranja();
@@ -566,7 +566,7 @@ function init() {
         }
     }
 
-    function formularioHuevos(){
+    function formularioHuevos() {
         document.getElementById('venderHuevos').classList.add('hidden');
         document.getElementById('venderLeche').classList.add('hidden');
         document.getElementById('venderTocino').classList.add('hidden');
@@ -582,9 +582,9 @@ function init() {
 
     }
 
-    function venderHuevos(){
-        var cantAVender =  document.getElementById('huevosParaVender').value;
-        if(inventario.cantidadHuevos > 0){
+    function venderHuevos() {
+        var cantAVender = document.getElementById('huevosParaVender').value;
+        if (inventario.cantidadHuevos > 0) {
             inventario.cantidadHuevos = inventario.cantidadHuevos - cantAVender;
             inventario.cantidadDinero = inventario.cantidadDinero + (cantAVender * 5);
             mostrarDatosGranja();
@@ -593,7 +593,7 @@ function init() {
         }
     }
 
-    function formularioLeche(){
+    function formularioLeche() {
         document.getElementById('venderHuevos').classList.add('hidden');
         document.getElementById('venderLeche').classList.add('hidden');
         document.getElementById('venderTocino').classList.add('hidden');
@@ -609,9 +609,9 @@ function init() {
 
     }
 
-    function venderLeche(){
-        var cantAVender =  document.getElementById('lecheParaVender').value;
-        if(inventario.cantidadLeche > 0){
+    function venderLeche() {
+        var cantAVender = document.getElementById('lecheParaVender').value;
+        if (inventario.cantidadLeche > 0) {
             inventario.cantidadLeche = inventario.cantidadLeche - cantAVender;
             inventario.cantidadDinero = inventario.cantidadDinero + (cantAVender * 20);
             mostrarDatosGranja();
@@ -621,7 +621,7 @@ function init() {
     }
 
 
-    function formularioTocino(){
+    function formularioTocino() {
         document.getElementById('venderHuevos').classList.add('hidden');
         document.getElementById('venderLeche').classList.add('hidden');
         document.getElementById('venderTocino').classList.add('hidden');
@@ -637,9 +637,9 @@ function init() {
 
     }
 
-    function venderTocino(){
-        var cantAVender =  document.getElementById('tocinoParaVender').value;
-        if(inventario.cantidadTocino > 0){
+    function venderTocino() {
+        var cantAVender = document.getElementById('tocinoParaVender').value;
+        if (inventario.cantidadTocino > 0) {
             inventario.cantidadTocino = inventario.cantidadTocino - cantAVender;
             inventario.cantidadDinero = inventario.cantidadDinero + (cantAVender * 10);
             mostrarDatosGranja();
@@ -649,34 +649,37 @@ function init() {
     }
 
     function update() {
-        
-                for (var i = 0; i < animals.length; i++) {
-                    animals[i].update();
-                }
-        
-                window.requestAnimationFrame(update);
-            }
-        
-            update();
 
-    function recogerProducto(){
-        for(var i = 0; i < animals.length; i++){
-            switch(animals[i].tipo){
+        for (var i = 0; i < animals.length; i++) {
+            animals[i].update();
+        }
+
+        window.requestAnimationFrame(update);
+    }
+
+    update();
+
+    function recogerProducto() {
+        for (var i = 0; i < animals.length; i++) {
+            switch (animals[i].tipo) {
                 case 'vaca':
                     inventario.cantidadLeche += animals[i].cantidadDeProducto;
-                break;
+                    break;
 
                 case 'gallina', 'pato':
                     inventario.cantidadHuevos += animals[i].cantidadDeProducto;
-                break;
+                    break;
 
                 case 'cerdo':
                     inventario.cantidadTocino += animals[i].cantidadDeProducto;
-                break;
+                    break;
             }
         }
-    
+
         mostrarDatosGranja();
     }
 
+    function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
 }
