@@ -182,17 +182,20 @@ function init() {
 
     function onAnimalCardClick(event) {
         console.log(event);
-        var animal = getAnimalByName(event.target.id);
+        var animal = getAnimalByName(event.target);
         console.log(animal);
-        var animalContainer = document.getElementById('animalContainer');
-        var datosAnimal = document.getElementById('datosAnimal');
-        datosAnimal.style.fontFamily = 'verdana';
-        datosAnimal.style.color = 'black';
-        datosAnimal.style.padding = '20px';
-        datosAnimal.style.lineHeight = '25px';
-        datosAnimal.innerHTML = '<strong>Nombre: </strong>' + animal.nombre + '<br>' + '<strong>Edad: </strong>' + animal.edad + '<br>' + '<strong>Altura: </strong>' + animal.altura + '<br>' + '<strong>Peso: </strong>' + animal.peso + '<br>' + '<strong>Tamaño: </strong>' + animal.tamanno + '<br>' + '<strong>Capacidad Estómago: </strong>' + animal.capacidadEstomago + '<br>' + '<strong>Capacidad Consumo de Agua: </strong>' + animal.capacidadConsumoAgua + '<br>' + '<strong>Capacidad Consumo de Alimento: </strong>' + animal.capacidadConsumoAlimento + '<br>' + '<strong>Capacidad de Producción: </strong>' + animal.capacidadProduccion + '<br>' + '<strong>Tipo de Producción: </strong>' + animal.tipoDeProduccion;
-        animalContainer.appendChild(datosAnimal);
-        generarBotonesAnimales();
+
+        if (animal !== null) {
+            var animalContainer = document.getElementById('animalContainer');
+            var datosAnimal = document.getElementById('datosAnimal');
+            datosAnimal.style.fontFamily = 'verdana';
+            datosAnimal.style.color = 'black';
+            datosAnimal.style.padding = '20px';
+            datosAnimal.style.lineHeight = '25px';
+            datosAnimal.innerHTML = '<strong>Nombre: </strong>' + animal.nombre + '<br>' + '<strong>Edad: </strong>' + animal.edad + '<br>' + '<strong>Altura: </strong>' + animal.altura + '<br>' + '<strong>Peso: </strong>' + animal.peso + '<br>' + '<strong>Tamaño: </strong>' + animal.tamanno + '<br>' + '<strong>Capacidad Estómago: </strong>' + animal.capacidadEstomago + '<br>' + '<strong>Capacidad Consumo de Agua: </strong>' + animal.capacidadConsumoAgua + '<br>' + '<strong>Capacidad Consumo de Alimento: </strong>' + animal.capacidadConsumoAlimento + '<br>' + '<strong>Capacidad de Producción: </strong>' + animal.capacidadProduccion + '<br>' + '<strong>Tipo de Producción: </strong>' + animal.tipoDeProduccion;
+            animalContainer.appendChild(datosAnimal);
+            generarBotonesAnimales();
+        }
     }
 
     function generarBotonesAnimales() {
@@ -221,13 +224,23 @@ function init() {
         animalContainer.appendChild(botonComer);
     }
 
-    function getAnimalByName(nombre) {
+    function getAnimalByName(target) {
+
+        var animal = null;
+
         for (var i = 0; i < animals.length; i++) {
-            if (animals[i].nombre === nombre) {
-                return animals[i];
+            if (animals[i].nombre === target.id) {
+                animal = animals[i];
             }
         }
-        return null;
+
+        if (animal === null && target.parentElement !== null) {
+            return getAnimalByName(target.parentElement);
+        } else if (animal !== null) {
+            return animal;
+        } else {
+            return null;
+        }
     }
 
     function formularioVaca() {
