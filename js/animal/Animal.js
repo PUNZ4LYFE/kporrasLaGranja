@@ -17,6 +17,7 @@ var Animal = (
             this.cantidadDeProducto = 0;
             this.tiempoDeProduction = 2 * this.FRAMERATE;
             this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
+            this.apetito = 50;
 
 		}
 		//Class Methods
