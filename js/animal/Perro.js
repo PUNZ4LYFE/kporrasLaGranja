@@ -4,6 +4,8 @@ var Perro = (
                   Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
                   
                   this.tipo = 'perro';
+                  this.felicidad = 50;
+                  this.apetito = 50;
             /*this.nombre = pnombre;
             this.edad = pedad;
             this.altura = paltura;
