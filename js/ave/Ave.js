@@ -12,6 +12,7 @@ var Ave = (
             this.capacidadProduccion = pcapacidadProduccion;
             this.tipoDeProduccion = ptipodeProduccion;
             this.felicidad = 50;
+            this.apetito = 50;
             this.tiempo = 0;
             this.FRAMERATE = 60;
             this.cantidadDeProducto = 0;
