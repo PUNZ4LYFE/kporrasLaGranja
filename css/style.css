@@ -73,7 +73,7 @@ html, body {
     margin: 0 auto;
     padding-top: 10px;
     height: 20px;
-    text-align: center;    
+    text-align: center;
 }
 
 #popupFormularioVaca, #popupFormularioGallina, #popupFormularioCerdo {
@@ -136,6 +136,7 @@ html, body {
 .compraVenta {
     display: block;
     margin:auto;
+    text-align: center;
     background-color: rgb(209, 52, 80);
     border: none;
     padding: 10px;
