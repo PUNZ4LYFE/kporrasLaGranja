@@ -3,6 +3,8 @@ var Gallina = (
 		function Gallina(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
                   Ave.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
                   this.precio = 100;
+                  this.felicidad = 50;
+                  this.apetito = 50;
                   // this.velocidadDeProducion = 2 * this.FRAMERATE;
                   this.tiempoDeProduction = 2 * this.FRAMERATE;
                   this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
