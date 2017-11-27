@@ -346,8 +346,9 @@ function init() {
             var alimento = randomInt(5, 10);
             var produccion = randomInt(5, 10);
             var tipoProduccion = 'leche';
+            var felicidad = randomInt(10, 100);
 
-            var vacaComprada = new Vaca(nombre, edad, altura, peso, tamanno, estomago, agua, alimento, produccion, tipoProduccion);
+            var vacaComprada = new Vaca(nombre, edad, altura, peso, tamanno, estomago, agua, alimento, produccion, tipoProduccion, felicidad);
             vacaComprada.color = 'brown';
             animals.push(vacaComprada);
 
@@ -390,8 +391,9 @@ function init() {
             var alimento = randomInt(5, 10);
             var produccion = randomInt(5, 10);
             var tipoProduccion = 'huevos';
+            var felicidad = randomInt(10, 100);
 
-            var gallinaComprada = new Gallina(nombre, edad, altura, peso, tamanno, estomago, agua, alimento, produccion, tipoProduccion);
+            var gallinaComprada = new Gallina(nombre, edad, altura, peso, tamanno, estomago, agua, alimento, produccion, tipoProduccion, felicidad);
             gallinaComprada.color = 'beige';
             animals.push(gallinaComprada);
 
@@ -436,8 +438,9 @@ function init() {
             var alimento = randomInt(5, 10);
             var produccion = randomInt(5, 10);
             var tipoProduccion = 'tocino';
+            var felicidad = randomInt(10, 100);
 
-            var cerdoComprada = new Cerdo(nombre, edad, altura, peso, tamanno, estomago, agua, alimento, produccion, tipoProduccion);
+            var cerdoComprada = new Cerdo(nombre, edad, altura, peso, tamanno, estomago, agua, alimento, produccion, tipoProduccion, felicidad);
             cerdoComprada.color = 'pink';
             animals.push(cerdoComprada);
 
