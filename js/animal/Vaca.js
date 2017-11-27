@@ -1,13 +1,13 @@
 var Vaca = (
 	function () {
-		function Vaca(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
-                  Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
+		function Vaca(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad) {
+                  Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad)
                   this.precio = 500;
                   this.cantidadDeProducto = 0;
-                  this.felicidad = 50;
+                  this.felicidad = pfelicidad;
                   this.apetito = 50;
 			// this.velocidadDeProducion = 2 * this.FRAMERATE;
-			this.tiempoDeProduction = 2 * this.FRAMERATE;
+			this.tiempoDeProduction = 200 * this.FRAMERATE;
                   this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
                   this.tipo = 'vaca';
             /*this.nombre = pnombre;
