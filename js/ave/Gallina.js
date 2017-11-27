@@ -1,9 +1,9 @@
 var Gallina = (
 	function () {
-		function Gallina(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
-                  Ave.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
+		function Gallina(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad) {
+                  Ave.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion,pfelicidad)
                   this.precio = 100;
-                  this.felicidad = 50;
+                  this.felicidad = pfelicidad;
                   this.apetito = 50;
                   // this.velocidadDeProducion = 2 * this.FRAMERATE;
                   this.tiempoDeProduction = 2 * this.FRAMERATE;
