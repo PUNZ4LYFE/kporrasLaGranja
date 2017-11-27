@@ -20,32 +20,32 @@ function init() {
     jotaro.tipo = 'caballo';
     animals.push(jotaro);
 
-    var marinette = new Gallina('Marinette', 1, 2, 10, 'pequeña', 2, 1, 1, 1, 'huevo');
+    var marinette = new Gallina('Marinette', 1, 2, 10, 'pequeña', 2, 1, 1, 20, 'huevo', 50);
     marinette.color = 'white';
     animals.push(marinette);
     marinette.tipo = 'gallina';
 
-    var adrien = new Gallina('Adrien', 1, 2, 10, 'pequeño', 2, 1, 1, 1, 'huevo');
+    var adrien = new Gallina('Adrien', 1, 2, 10, 'pequeño', 2, 1, 1, 20, 'huevo', 100);
     adrien.color = 'white';
     animals.push(adrien);
     adrien.tipo = 'gallina';
 
-    var donald = new Pato('Donald', 1, 2, 10, 'pequeño', 2, 1, 1, 1, 'huevo');
+    var donald = new Pato('Donald', 1, 2, 10, 'pequeño', 2, 1, 1, 20, 'huevo', 20);
     donald.color = 'white';
     animals.push(donald);
     donald.tipo = 'pato';
 
-    var daisy = new Pato('Daisy', 1, 2, 10, 'pequeño', 2, 1, 1, 1, 'huevo');
+    var daisy = new Pato('Daisy', 1, 2, 10, 'pequeño', 2, 1, 1, 20, 'huevo', 50);
     daisy.color = 'white';
     animals.push(daisy);
     daisy.tipo = 'pato';
 
-    var waddles = new Cerdo('Waddles', 1, 2, 10, 'mediano', 4, 2, 2, 3, 'tocino');
+    var waddles = new Cerdo('Waddles', 1, 2, 10, 'mediano', 4, 2, 2, 30, 'tocino', 30);
     waddles.color = 'pink';
     animals.push(waddles);
     waddles.tipo = 'cerdo';
 
-    var millie = new Vaca('Millie', 1, 2, 10, 'grande', 10, 5, 5, 5, 'leche');
+    var millie = new Vaca('Millie', 1, 2, 10, 'grande', 10, 5, 5, 50, 'leche', 20);
     millie.color = 'brown';
     animals.push(millie);
     millie.tipo = 'vaca';
@@ -627,33 +627,40 @@ function init() {
 
         for (var i = 0; i < animals.length; i++) {
             animals[i].update();
+            window.requestAnimationFrame(updateCards);
+            //window.requestAnimationFrame(updateDatosAnimal); //Si esto se descomenta, lo que pasa es que sí actualiza todos los valores, pero los botones para comer, beber & acariciar dejan de funcionar, no sé por qué
         }
-
+        
         window.requestAnimationFrame(update);
+        
     }
 
     update();
+    updateCards();
 
     function recogerProducto() {
         for (var i = 0; i < animals.length; i++) {
             switch (animals[i].tipo) {
                 case 'vaca':
                     inventario.cantidadLeche += animals[i].cantidadDeProducto;
+                    animals[i].cantidadDeProducto = 0;
                     break;
 
                 case 'gallina', 'pato':
                     inventario.cantidadHuevos += animals[i].cantidadDeProducto;
+                    animals[i].cantidadDeProducto = 0;
                     break;
 
                 case 'cerdo':
                     inventario.cantidadTocino += animals[i].cantidadDeProducto;
+                    animals[i].cantidadDeProducto = 0;
                     break;
             }
         }
 
         mostrarDatosGranja();
         updateCards();
-        updateDatosAnimal();
+        //updateDatosAnimal();
     }
 
     function randomInt(min, max) {
@@ -662,7 +669,7 @@ function init() {
     
     function comer(){
         for (var i = 0; i < animals.length; i++) {
-            if(animals[i].apetito < 100 && inventario.cantidadAlimento >= 5){
+            if(animals[i].apetito < 100 && animals[i].apetito != 0 && inventario.cantidadAlimento >= 5){
                 animals[i].apetito = animals[i].apetito - 10;
                 inventario.cantidadAlimento = inventario.cantidadAlimento - 5;
                 if(animals[i].felicidad < 100){
@@ -678,11 +685,11 @@ function init() {
 
     function beber(){
         for (var i = 0; i < animals.length; i++) {
-            if(animals[i].apetito < 100 && inventario.cantidadAgua >= 5){
+            if(animals[i].apetito < 100 && animals[i].apetito != 0 && inventario.cantidadAgua >= 5){
                 animals[i].apetito = animals[i].apetito - 5;
                 inventario.cantidadAgua = inventario.cantidadAgua - 5;
                 if(animals[i].felicidad < 100){
-                    animals[i].felicidad = animals[i].felicidad * 0.5; 
+                    animals[i].felicidad = animals[i].felicidad * 1.5; 
                 }
                 updateCards();
                 
@@ -727,6 +734,6 @@ function init() {
          animal.style.display = 'block';
          animal.classList.add('nombreAnimal');
         }
-    updateDatosAnimal();        
+    //updateDatosAnimal();        
     }
 }
