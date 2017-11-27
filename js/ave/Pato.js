@@ -1,9 +1,9 @@
 var Pato = (
 	function () {
-		function Pato(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
-                  Ave.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
+		function Pato(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad) {
+                  Ave.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad)
                   // this.velocidadDeProducion = 2 * this.FRAMERATE;
-                  this.felicidad = 50;
+                  this.felicidad = pfelicidad;
                   this.apetito = 50;
                   this.tiempoDeProduction = 2 * this.FRAMERATE;
                   this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
