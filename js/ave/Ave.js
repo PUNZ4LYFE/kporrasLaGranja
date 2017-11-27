@@ -1,6 +1,6 @@
 var Ave = (
 	function () {
-		function Ave(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
+		function Ave(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad) {
             this.nombre = pnombre;
             this.edad = pedad;
             this.altura = paltura;
@@ -11,7 +11,7 @@ var Ave = (
             this.capacidadConsumoAlimento = pcapacidadConsumoAlimento;
             this.capacidadProduccion = pcapacidadProduccion;
             this.tipoDeProduccion = ptipodeProduccion;
-            this.felicidad = 50;
+            this.felicidad = pfelicidad;
             this.apetito = 50;
             this.tiempo = 0;
             this.FRAMERATE = 60;
