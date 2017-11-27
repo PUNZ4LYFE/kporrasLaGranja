@@ -1,6 +1,6 @@
 var Animal = (
 	function () {
-		function Animal(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
+		function Animal(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad) {
             this.nombre = pnombre;
             this.edad = pedad;
             this.altura = paltura;
@@ -11,7 +11,7 @@ var Animal = (
             this.capacidadConsumoAlimento = pcapacidadConsumoAlimento;
             this.capacidadProduccion = pcapacidadProduccion;
             this.tipoDeProduccion = ptipodeProduccion;
-            this.felicidad = 50;
+            this.felicidad = pfelicidad;
             this.tiempo = 0;
             this.FRAMERATE = 60;
             this.cantidadDeProducto = 0;
