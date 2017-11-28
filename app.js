@@ -131,7 +131,7 @@ function init() {
             title.style.display = 'block';
             title.classList.add('nombreAnimal');
             animal.appendChild(title);
-            
+
 
             switch (animals[i].tipo) {
                 case 'gato':
@@ -278,7 +278,7 @@ function init() {
         inputsFormulario[0].style.marginTop = '10px';
         inputsFormulario[0].style.marginLeft = '15px';
         inputsFormulario[0].style.padding = '5px';
-        
+
 
         var botonComprarVaca = document.getElementById('botonComprarVaca');
         botonComprarVaca.type = 'button';
@@ -294,13 +294,13 @@ function init() {
         document.getElementById('popupFormularioGallina').classList.remove('hidden');
         var inputsFormulario = [];
         inputsFormulario[0] = document.getElementById('nombreGallina');
-        inputsFormulario[0].placeholder = 'Nombre del animal';  
+        inputsFormulario[0].placeholder = 'Nombre del animal';
         inputsFormulario[0].type = 'text';
         inputsFormulario[0].style.width = '220px';
         inputsFormulario[0].style.marginTop = '10px';
         inputsFormulario[0].style.marginLeft = '15px';
         inputsFormulario[0].style.padding = '5px';
-        
+
         var botonComprarGallina = document.getElementById('botonComprarGallina');
         botonComprarGallina.type = 'button';
         botonComprarGallina.value = 'Comprar Animal';
@@ -320,7 +320,7 @@ function init() {
         inputsFormulario[0].style.marginTop = '10px';
         inputsFormulario[0].style.marginLeft = '15px';
         inputsFormulario[0].style.padding = '5px';
-        
+
         var botonComprarCerdo = document.getElementById('botonComprarCerdo');
         botonComprarCerdo.type = 'button';
         botonComprarCerdo.value = 'Comprar Animal';
@@ -336,7 +336,7 @@ function init() {
         document.getElementById('popupFormularioVaca').classList.add('hidden');
         if (inventario.cantidadDinero >= 500) {
             var datosFormulario = [];
-            var nombre  = document.getElementById('nombreVaca').value;
+            var nombre = document.getElementById('nombreVaca').value;
             var edad = randomInt(5, 10);
             var altura = randomInt(5, 10);
             var peso = randomInt(100, 200);
@@ -371,6 +371,8 @@ function init() {
 
             inventario.cantidadDinero = inventario.cantidadDinero - vacaComprada.precio;
 
+            tarjetasAnimales.push(title);
+
             mostrarDatosGranja();
         } else {
             alert('dont');
@@ -381,7 +383,7 @@ function init() {
         document.getElementById('popupFormularioGallina').classList.add('hidden');
         if (inventario.cantidadDinero >= 500) {
             var datosFormulario = [];
-            var nombre  = document.getElementById('nombreGallina').value;
+            var nombre = document.getElementById('nombreGallina').value;
             var edad = randomInt(5, 10);
             var altura = randomInt(1, 3);
             var peso = randomInt(3, 10);
@@ -428,7 +430,7 @@ function init() {
         document.getElementById('popupFormularioCerdo').classList.add('hidden');
         if (inventario.cantidadDinero >= 500) {
             var datosFormulario = [];
-            var nombre  = document.getElementById('nombreCerdo').value;
+            var nombre = document.getElementById('nombreCerdo').value;
             var edad = randomInt(5, 10);
             var altura = randomInt(5, 10);
             var peso = randomInt(100, 200);
@@ -633,9 +635,9 @@ function init() {
             window.requestAnimationFrame(updateCards);
             //window.requestAnimationFrame(updateDatosAnimal); //Si esto se descomenta, lo que pasa es que sí actualiza todos los valores, pero los botones para comer, beber & acariciar dejan de funcionar, no sé por qué
         }
-        
+
         window.requestAnimationFrame(update);
-        
+
     }
 
     update();
@@ -669,52 +671,54 @@ function init() {
     function randomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
-    
-    function comer(){
+
+    //Comer debe estar dentro del objecto aminal
+    function comer() {
         for (var i = 0; i < animals.length; i++) {
-            if(animals[i].apetito < 100 && animals[i].apetito != 0 && inventario.cantidadAlimento >= 5){
+            if (animals[i].apetito < 100 && animals[i].apetito != 0 && inventario.cantidadAlimento >= 5) {
                 animals[i].apetito = animals[i].apetito - 10;
                 inventario.cantidadAlimento = inventario.cantidadAlimento - 5;
-                if(animals[i].felicidad < 100){
-                    animals[i].felicidad = animals[i].felicidad * 1.5; 
+                if (animals[i].felicidad < 100) {
+                    animals[i].felicidad = animals[i].felicidad * 1.5;
                 }
                 updateCards();
-                
-            }else{}
+
+            } else {}
         }
-        
-        mostrarDatosGranja();       
+
+        mostrarDatosGranja();
     }
 
-    function beber(){
+    //Beber debe estar dentro del objecto aminal
+    function beber() {
         for (var i = 0; i < animals.length; i++) {
-            if(animals[i].apetito < 100 && animals[i].apetito != 0 && inventario.cantidadAgua >= 5){
+            if (animals[i].apetito < 100 && animals[i].apetito != 0 && inventario.cantidadAgua >= 5) {
                 animals[i].apetito = animals[i].apetito - 5;
                 inventario.cantidadAgua = inventario.cantidadAgua - 5;
-                if(animals[i].felicidad < 100){
-                    animals[i].felicidad = animals[i].felicidad * 1.5; 
+                if (animals[i].felicidad < 100) {
+                    animals[i].felicidad = animals[i].felicidad * 1.5;
                 }
                 updateCards();
-                
-            }else{}
+
+            } else {}
         }
-        
-        mostrarDatosGranja();       
+
+        mostrarDatosGranja();
     }
 
-    function acariciar(){
+    function acariciar() {
         for (var i = 0; i < animals.length; i++) {
-         if(animals[i].felicidad < 100 ){
-            animals[i].felicidad += 1; 
-         }    
-        } 
-        updateCards();        
-        mostrarDatosGranja();     
+            if (animals[i].felicidad < 100) {
+                animals[i].felicidad += 1;
+            }
+        }
+        updateCards();
+        mostrarDatosGranja();
     }
 
-    function updateDatosAnimal(){
+    function updateDatosAnimal() {
 
-        for(var i = 0; i < animals.length; i++){
+        for (var i = 0; i < animals.length; i++) {
             var animalContainer = document.getElementById('animalContainer');
             var datosAnimal = document.getElementById('datosAnimal');
             datosAnimal.style.fontFamily = 'verdana';
@@ -727,16 +731,16 @@ function init() {
         }
     }
 
-    function updateCards(){
-        for(var i = 0; i < animals.length; i++){
-          
-          var animal = tarjetasAnimales[i];
+    function updateCards() {
+        for (var i = 0; i < animals.length; i++) {
 
-         animal.innerHTML = animals[i].nombre + '<br>' + 'Felicidad: ' + animals[i].felicidad + '<br>' + 'Cantidad de Producto: ' + animals[i].cantidadDeProducto + '<br>' + 'Apetito: ' + animals[i].apetito;
-         animal.style.textAlign = 'center';
-         animal.style.display = 'block';
-         animal.classList.add('nombreAnimal');
+            var animal = tarjetasAnimales[i];
+
+            animal.innerHTML = animals[i].nombre + '<br>' + 'Felicidad: ' + animals[i].felicidad + '<br>' + 'Cantidad de Producto: ' + animals[i].cantidadDeProducto + '<br>' + 'Apetito: ' + animals[i].apetito;
+            animal.style.textAlign = 'center';
+            animal.style.display = 'block';
+            animal.classList.add('nombreAnimal');
         }
-    //updateDatosAnimal();        
+        //updateDatosAnimal();        
     }
 }
