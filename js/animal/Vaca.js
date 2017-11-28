@@ -46,6 +46,7 @@ var Vaca = (
 
             if (this.capacidadProduccion >= this.cantidadDeProducto) {
                   if (this.tiempo <= this.tiempoDeProduction) {
+                        //this.cantidadDeProducto = Math.round(this.cantidadDeProducto + this.cantidadDeProductoPorTiempo);
                         this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
                         this.tiempo = 0;
                         console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
