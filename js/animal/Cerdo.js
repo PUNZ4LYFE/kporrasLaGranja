@@ -1,10 +1,10 @@
 var Cerdo = (
 	function () {
-		function Cerdo(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad) {
-                  Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad)
+		function Cerdo(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
+                  Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
                   this.precio = 200; 
                   this.cantidadDeProducto = 0;
-                  this.felicidad = pfelicidad;
+                  this.felicidad = 50;
                   this.apetito = 50;
 			// this.velocidadDeProducion = 2 * this.FRAMERATE;
 			this.tiempoDeProduction = 2 * this.FRAMERATE;
@@ -46,6 +46,7 @@ var Cerdo = (
 
           if (this.capacidadProduccion >= this.cantidadDeProducto) {
                 if (this.tiempo <= this.tiempoDeProduction) {
+                      //this.cantidadDeProducto = Math.round(this.cantidadDeProducto + this.cantidadDeProductoPorTiempo);
                       this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
                       this.tiempo = 0;
                       console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
