@@ -47,7 +47,8 @@ var Cerdo = (
                   if (this.capacidadProduccion >= this.cantidadDeProducto) {
                         if (this.tiempo <= this.tiempoDeProduction) {
                               //this.cantidadDeProducto = Math.round(this.cantidadDeProducto + this.cantidadDeProductoPorTiempo);
-                              this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
+                              // this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
+                              this.cantidadDeProducto = Number(this.cantidadDeProducto + this.cantidadDeProductoPorTiempo).toFixed(2);
                               this.tiempo = 0;
                               // console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
                         }
