@@ -1,0 +1,118 @@
+{
+    "animales": [
+        {
+            "nombre": "Batido",
+            "edad": 1,
+            "altura": 2,
+            "peso": 10,
+            "tamanno": "mediana",
+            "capacidadEstomago": 4,
+            "capacidadConsumoAgua": 2,
+            "capacidadConsumoAlimento": 2,
+            "capacidadProduccion": "ninguna",
+            "tipoDeProduccion": "ninguno"
+        },
+        {
+            "nombre": "Lucas",
+            "edad": 1,
+            "altura": 2,
+            "peso": 10,
+            "tamanno": "mediano",
+            "capacidadEstomago": 4,
+            "capacidadConsumoAgua": 2,
+            "capacidadConsumoAlimento": 2,
+            "capacidadProduccion": "ninguna",
+            "tipoDeProduccion": "ninguno"
+        },
+        {
+            "nombre": "Jotaro",
+            "edad": 1,
+            "altura": 2,
+            "peso": 10,
+            "tamanno": "grande",
+            "capacidadEstomago": 10,
+            "capacidadConsumoAgua": 5,
+            "capacidadConsumoAlimento": 5,
+            "capacidadProduccion": "ninguna",
+            "tipoDeProduccion": "ninguno"
+        },
+        {
+            "nombre": "Marinette",
+            "edad": 1,
+            "altura": 2,
+            "peso": 10,
+            "tamanno": "pequenna",
+            "capacidadEstomago": 2,
+            "capacidadConsumoAgua": 1,
+            "capacidadConsumoAlimento": 1,
+            "capacidadProduccion": 20,
+            "tipoDeProduccion": "huevo",
+            "felicidad": 10
+        },
+        {
+            "nombre": "Adrien",
+            "edad": 1,
+            "altura": 2,
+            "peso": 10,
+            "tamanno": "pequenna",
+            "capacidadEstomago": 2,
+            "capacidadConsumoAgua": 1,
+            "capacidadConsumoAlimento": 1,
+            "capacidadProduccion": 20,
+            "tipoDeProduccion": "huevo",
+            "felicidad": 50
+        },
+        {
+            "nombre": "Donald",
+            "edad": 1,
+            "altura": 2,
+            "peso": 10,
+            "tamanno": "pequenno",
+            "capacidadEstomago": 2,
+            "capacidadConsumoAgua": 1,
+            "capacidadConsumoAlimento": 1,
+            "capacidadProduccion": 20,
+            "tipoDeProduccion": "huevo",
+            "felicidad": 50
+        },
+        {
+            "nombre": "Daisy",
+            "edad": 1,
+            "altura": 2,
+            "peso": 10,
+            "tamanno": "pequenno",
+            "capacidadEstomago": 2,
+            "capacidadConsumoAgua": 1,
+            "capacidadConsumoAlimento": 1,
+            "capacidadProduccion": 20,
+            "tipoDeProduccion": "huevo",
+            "felicidad": 50
+        },
+        {
+            "nombre": "Cerdo",
+            "edad": 1,
+            "altura": 2,
+            "peso": 10,
+            "tamanno": "mediano",
+            "capacidadEstomago": 4,
+            "capacidadConsumoAgua": 2,
+            "capacidadConsumoAlimento": 2,
+            "capacidadProduccion": 30,
+            "tipoDeProduccion": "tocino",
+            "felicidad": 50
+        },
+        {
+            "nombre": "Millie",
+            "edad": 1,
+            "altura": 2,
+            "peso": 10,
+            "tamanno": "grande",
+            "capacidadEstomago": 10,
+            "capacidadConsumoAgua": 5,
+            "capacidadConsumoAlimento": 5,
+            "capacidadProduccion": 50,
+            "tipoDeProduccion": "leche",
+            "felicidad": 90
+        }
+    ]
+}
