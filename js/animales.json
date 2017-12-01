@@ -1,6 +1,5 @@
 {
-    "animales": [
-        {
+    "animales": [{
             "nombre": "Batido",
             "edad": 1,
             "altura": 2,
