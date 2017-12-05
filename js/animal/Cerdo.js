@@ -1,20 +1,18 @@
 var Cerdo = (
       function () {
-            function Cerdo(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
-                  Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
-                  this.precio = 200;
-                  this.cantidadDeProducto = 0;
+            function Cerdo(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad, callback) {
+                  Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad)
+                  this.color;
+                  this.tipo = 'cerdo';
                   this.felicidad = 50;
                   this.apetito = 50;
-                  // this.velocidadDeProducion = 2 * this.FRAMERATE;
-                  this.tiempoDeProduction = 2 * this.FRAMERATE;
-                  this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
-                  this.tipo = 'cerdo';
                   /*this.nombre = pnombre;
                   this.edad = pedad;
                   this.altura = paltura;
                   this.peso = ppeso;
                   this.tamanno = ptamanno;*/
+                  this.animalDivCallback = callback;
+                  this.addCard();
             }
 
             //Herencia
@@ -22,18 +20,6 @@ var Cerdo = (
             Cerdo.prototype.constructor = Animal;
 
             //Class Methods
-
-            Cerdo.prototype.comer = function () {
-                  console.log(this.nombre + ': soy un cerdo & solo como alimento!');
-            }
-
-            Cerdo.prototype.caminar = function () {
-                  console.log(this.nombre + ': soy un cerdo & camino en el lodo!');
-            }
-
-            Cerdo.prototype.beber = function () {
-                  console.log(this.nombre + ': soy un cerdo & solo bebo agua!');
-            }
 
             Cerdo.prototype.producir = function () {
 
@@ -51,9 +37,9 @@ var Cerdo = (
                               //this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
                               this.tiempo = 0;
                               console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
+                              this.updateCards();
                         }
                   } else {
-                        //Vace llena
                   }
 
             }
@@ -61,6 +47,38 @@ var Cerdo = (
             Cerdo.prototype.update = function () {
                   this.tiempo++;
                   this.crearProducto();
+                  this.updateCards();
+            }
+
+            Cerdo.prototype.addCard = function () {
+                  
+                  var animalsContainer = document.getElementById('animalsContainer');
+                  this.animalDiv = document.createElement('div');
+                  animalsContainer.appendChild(this.animalDiv);
+                  this.animalDiv.id = this.nombre;
+                  this.animalDiv.classList.add('animalCardContainer');
+                  
+                  this.animalDivTitle = document.createElement('h5');
+                  this.animalDivTitle.id = 'title';
+                  this.animalDivTitle.innerHTML = this.nombre + '<br>' + 'Felicidad: ' + this.felicidad + '<br>' + 'Cantidad de Producto: ' + this.cantidadDeProducto + '<br>' + 'Apetito: ' + this.apetito;
+                  this.animalDivTitle.style.textAlign = 'center';
+                  this.animalDivTitle.style.display = 'block';
+                  this.animalDivTitle.classList.add('nombreAnimal');
+                  this.animalDiv.appendChild(this.animalDivTitle);
+                  
+                  var foto = document.createElement("img");
+                  foto.setAttribute("src", "../img/pig.svg");
+                  foto.classList.add('svg');
+                  this.animalDiv.appendChild(foto);
+                  
+                  this.animalDiv.addEventListener('click', this.animalDivCallback, false);
+            }
+                  
+            Cerdo.prototype.updateCards = function () {
+                  this.animalDivTitle.innerHTML = this.nombre + '<br>' +
+                  'Felicidad: ' + this.felicidad + '<br>' +
+                  'Cantidad de Producto: ' + this.cantidadDeProducto + '<br>' +
+                  'Apetito: ' + this.apetito;
             }
 
             return Cerdo;
