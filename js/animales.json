@@ -9,7 +9,8 @@
             "capacidadConsumoAgua": 2,
             "capacidadConsumoAlimento": 2,
             "capacidadProduccion": "ninguna",
-            "tipoDeProduccion": "ninguno"
+            "tipoDeProduccion": "ninguno",
+            "tipo": "gato"
         },
         {
             "nombre": "Lucas",
@@ -21,7 +22,8 @@
             "capacidadConsumoAgua": 2,
             "capacidadConsumoAlimento": 2,
             "capacidadProduccion": "ninguna",
-            "tipoDeProduccion": "ninguno"
+            "tipoDeProduccion": "ninguno",
+            "tipo": "perro"
         },
         {
             "nombre": "Jotaro",
@@ -33,7 +35,8 @@
             "capacidadConsumoAgua": 5,
             "capacidadConsumoAlimento": 5,
             "capacidadProduccion": "ninguna",
-            "tipoDeProduccion": "ninguno"
+            "tipoDeProduccion": "ninguno",
+            "tipo": "caballo"
         },
         {
             "nombre": "Marinette",
@@ -46,7 +49,8 @@
             "capacidadConsumoAlimento": 1,
             "capacidadProduccion": 20,
             "tipoDeProduccion": "huevo",
-            "felicidad": 10
+            "felicidad": 10,
+            "tipo": "gallina"
         },
         {
             "nombre": "Adrien",
@@ -59,7 +63,8 @@
             "capacidadConsumoAlimento": 1,
             "capacidadProduccion": 20,
             "tipoDeProduccion": "huevo",
-            "felicidad": 50
+            "felicidad": 50,
+            "tipo": "gallina"
         },
         {
             "nombre": "Donald",
@@ -72,7 +77,8 @@
             "capacidadConsumoAlimento": 1,
             "capacidadProduccion": 20,
             "tipoDeProduccion": "huevo",
-            "felicidad": 50
+            "felicidad": 50,
+            "tipo": "pato"
         },
         {
             "nombre": "Daisy",
@@ -85,7 +91,8 @@
             "capacidadConsumoAlimento": 1,
             "capacidadProduccion": 20,
             "tipoDeProduccion": "huevo",
-            "felicidad": 50
+            "felicidad": 50,
+            "tipo": "pato"
         },
         {
             "nombre": "Cerdo",
@@ -98,7 +105,8 @@
             "capacidadConsumoAlimento": 2,
             "capacidadProduccion": 30,
             "tipoDeProduccion": "tocino",
-            "felicidad": 50
+            "felicidad": 50,
+            "tipo": "cerdo"
         },
         {
             "nombre": "Millie",
@@ -111,7 +119,8 @@
             "capacidadConsumoAlimento": 5,
             "capacidadProduccion": 50,
             "tipoDeProduccion": "leche",
-            "felicidad": 90
+            "felicidad": 90,
+            "tipo": "vaca"
         }
     ]
 }
