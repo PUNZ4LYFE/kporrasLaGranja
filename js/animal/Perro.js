@@ -1,34 +1,56 @@
 var Perro = (
 	function () {
-		function Perro(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion) {
-                  Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
-                  
-                  this.tipo = 'perro';
-                  this.felicidad = 50;
-                  this.apetito = 50;
+		function Perro(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, callback) {
+            Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion)
+            this.color;
+            this.tipo = 'perro';
+            this.felicidad = 50;
+            this.apetito = 50;
             /*this.nombre = pnombre;
             this.edad = pedad;
             this.altura = paltura;
             this.peso = ppeso;
             this.tamanno = ptamanno;*/
-            }
+            this.animalDivCallback = callback;
+            this.addCard();
+      }
 
             Perro.prototype = Object.create(Animal.prototype);
             Perro.prototype.constructor = Animal;
             
-		//Class Methods
+		//Class Methods 
+        
+        Perro.prototype.addCard = function () {
             
-        Perro.prototype.comer = function () {
-			console.log(this.nombre + ': soy un perro & como lo que sea!');
+            var animalsContainer = document.getElementById('animalsContainer');
+            this.animalDiv = document.createElement('div');
+            animalsContainer.appendChild(this.animalDiv);
+            this.animalDiv.id = this.nombre;
+            this.animalDiv.classList.add('animalCardContainer');
+            
+            this.animalDivTitle = document.createElement('h5');
+            this.animalDivTitle.id = 'title';
+            this.animalDivTitle.innerHTML = this.nombre + '<br>' + 'Felicidad: ' + this.felicidad + '<br>' + 'Cantidad de Producto: ' + this.cantidadDeProducto + '<br>' + 'Apetito: ' + this.apetito;
+            this.animalDivTitle.style.textAlign = 'center';
+            this.animalDivTitle.style.display = 'block';
+            this.animalDivTitle.classList.add('nombreAnimal');
+            this.animalDiv.appendChild(this.animalDivTitle);
+            
+            var foto = document.createElement("img");
+            foto.setAttribute("src", "../img/dog.svg");
+            foto.classList.add('svg');
+            this.animalDiv.appendChild(foto);
+            
+            this.animalDiv.addEventListener('click', this.animalDivCallback, false);
         }
-
-        Perro.prototype.caminar = function () {
-			console.log(this.nombre + ': soy un perro & camino gracioso!');
+            
+        Perro.prototype.updateCards = function () {
+            this.animalDivTitle.innerHTML = this.nombre + '<br>' +
+            'Felicidad: ' + this.felicidad + '<br>' +
+            'Cantidad de Producto: ' + this.cantidadDeProducto + '<br>' +
+            'Apetito: ' + this.apetito;
         }
-
-        Perro.prototype.beber = function () {
-			console.log(this.nombre + ': soy un perro & solo bebo agua!');
-        }      
+            
 
 		return Perro;
 	}
