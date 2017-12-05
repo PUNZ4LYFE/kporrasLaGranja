@@ -20,16 +20,32 @@ var Ave = (
                   this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
             }
             //Class Methods
-            Ave.prototype.comer = function () {
-                  console.log('Cada animaveal come a su manera.');
+            Ave.prototype.comer = function (granero) {
+                  console.log('Cada animal come. ' + this.apetito);
+                  if (this.apetito < 100 && this.apetito != 0 && granero.cantidadAlimento >= 5) {
+                        this.apetito = this.apetito - 10;
+                        granero.cantidadAlimento = granero.cantidadAlimento - 5;
+                        if (this.felicidad < 100) {
+                              this.felicidad += 10;
+                        }
+                  }
+                  this.updateCards();
             }
 
             Ave.prototype.caminar = function () {
                   console.log('Cada animal camina a su manera.');
             }
 
-            Ave.prototype.beber = function () {
-                  console.log('Cada ave bebe a su manera.');
+            Ave.prototype.beber = function (granero) {
+                  console.log('Cada animal come. ' + this.apetito);
+                  if (this.apetito < 100 && this.apetito != 0 && granero.cantidadAgua >= 5) {
+                        this.apetito = this.apetito - 10;
+                        granero.cantidadAgua = granero.cantidadAgua - 5;
+                        if (this.felicidad < 100) {
+                              this.felicidad += 10;
+                        }
+                  }
+                  this.updateCards();
             }
 
             Ave.prototype.producir = function () {
