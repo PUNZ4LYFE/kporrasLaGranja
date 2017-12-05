@@ -30,7 +30,7 @@ var Animal = (
                         this.apetito = this.apetito - 10;
                         granero.cantidadAlimento = granero.cantidadAlimento - 5;
                         if (this.felicidad < 100) {
-                              this.felicidad = this.felicidad * 1.5;
+                              this.felicidad += 10;
                         }
                   }
                   this.updateCards();
@@ -40,8 +40,16 @@ var Animal = (
                   console.log('Cada animal camina a su manera.');
             }
 
-            Animal.prototype.beber = function () {
-                  console.log('Cada animal bebe a su manera.');
+            Animal.prototype.beber = function (granero) {
+                  console.log('Cada animal come. ' + this.apetito);
+                  if (this.apetito < 100 && this.apetito != 0 && granero.cantidadAgua >= 5) {
+                        this.apetito = this.apetito - 10;
+                        granero.cantidadAgua = granero.cantidadAgua - 5;
+                        if (this.felicidad < 100) {
+                              this.felicidad += 10;
+                        }
+                  }
+                  this.updateCards();
             }
 
             Animal.prototype.producir = function () {
