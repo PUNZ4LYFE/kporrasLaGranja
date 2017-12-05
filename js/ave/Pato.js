@@ -1,6 +1,6 @@
 var Pato = (
 	function () {
-		function Pato(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad) {
+		function Pato(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad, callback) {
                   Ave.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipodeProduccion, pfelicidad)
                   // this.velocidadDeProducion = 2 * this.FRAMERATE;
                   this.felicidad = pfelicidad;
@@ -8,6 +8,8 @@ var Pato = (
                   this.tiempoDeProduction = 2 * this.FRAMERATE;
                   this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
                   this.tipo = 'pato';
+                  this.animalDivCallback = callback;
+                  this.addCard();
             /*this.nombre = pnombre;
             this.edad = pedad;
             this.altura = paltura;
@@ -18,19 +20,7 @@ var Pato = (
             Pato.prototype = Object.create(Ave.prototype);
             Pato.prototype.constructor = Ave;
             
-		//Class Methods
-            
-        Pato.prototype.comer = function () {
-			console.log(this.nombre + ': soy un pato & como lo que sea!');
-        }
-
-        Pato.prototype.caminar = function () {
-			console.log(this.nombre + ': soy un pato & camino gracioso!');
-        }
-
-        Pato.prototype.beber = function () {
-			console.log(this.nombre + ': soy un pato & solo bebo agua!');
-        }      
+		//Class Methods     
 
         Pato.prototype.producir = function () {
             
@@ -47,9 +37,9 @@ var Pato = (
                       this.felicidad--;
                       this.tiempo = 0;
                       console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
+                      this.updateCards();
                 }
           } else {
-                //Vace llena
           }
 
     }
@@ -57,9 +47,41 @@ var Pato = (
     Pato.prototype.update = function () {
           this.tiempo++;
           this.crearProducto();
+          this.updateCards();
     }
 
+    Pato.prototype.addCard = function () {
+      
+            var animalsContainer = document.getElementById('animalsContainer');
+            this.animalDiv = document.createElement('div');
+            animalsContainer.appendChild(this.animalDiv);
+            this.animalDiv.id = this.nombre;
+            this.animalDiv.classList.add('animalCardContainer');
+            
+            this.animalDivTitle = document.createElement('h5');
+            this.animalDivTitle.id = 'title';
+            this.animalDivTitle.innerHTML = this.nombre + '<br>' + 'Felicidad: ' + this.felicidad + '<br>' + 'Cantidad de Producto: ' + this.cantidadDeProducto + '<br>' + 'Apetito: ' + this.apetito;
+            this.animalDivTitle.style.textAlign = 'center';
+            this.animalDivTitle.style.display = 'block';
+            this.animalDivTitle.classList.add('nombreAnimal');
+            this.animalDiv.appendChild(this.animalDivTitle);
+            
+            var foto = document.createElement("img");
+            foto.setAttribute("src", "../img/duck.svg");
+            foto.classList.add('svg');
+            this.animalDiv.appendChild(foto);
+            
+            this.animalDiv.addEventListener('click', this.animalDivCallback, false);
+      }
+      
+    Pato.prototype.updateCards = function () {
+            this.animalDivTitle.innerHTML = this.nombre + '<br>' +
+            'Felicidad: ' + this.felicidad + '<br>' +
+            'Cantidad de Producto: ' + this.cantidadDeProducto + '<br>' +
+            'Apetito: ' + this.apetito;
+      }
 
-		return Pato;
+
+	return Pato;
 	}
 )();
