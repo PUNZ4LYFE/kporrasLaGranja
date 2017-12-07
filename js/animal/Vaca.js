@@ -33,7 +33,7 @@ var Vaca = (
             //this.velocidadDeProducion = 0
 
             if (this.capacidadProduccion >= this.cantidadDeProducto) {
-                  if (this.tiempo <= this.tiempoDeProduction) {
+                  if (this.tiempo <= this.tiempoDeProduction && this.felicidad > 0) {
                         this.cantidadDeProducto = Math.round(this.cantidadDeProducto + this.cantidadDeProductoPorTiempo);
                         this.felicidad--;
                         //this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
