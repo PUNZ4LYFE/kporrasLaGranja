@@ -680,9 +680,9 @@ function init() {
         currentAnimal.update();
 
         mostrarDatosGranja();
-        updateAnimalContainer();
+        //updateAnimalContainer();
         //updateCards();
-        //updateDatosAnimal();
+        updateDatosAnimal();
     }
 
     function randomInt(min, max) {
@@ -710,17 +710,17 @@ function init() {
 
     function updateDatosAnimal() {
 
-        for (var i = 0; i < animals.length; i++) {
             var animalContainer = document.getElementById('animalContainer');
             var datosAnimal = document.getElementById('datosAnimal');
             datosAnimal.style.fontFamily = 'verdana';
             datosAnimal.style.color = 'black';
             datosAnimal.style.padding = '20px';
             datosAnimal.style.lineHeight = '25px';
-            datosAnimal.innerHTML = '<strong>Nombre: </strong>' + animals[i].nombre + '<br>' + '<strong>Edad: </strong>' + animals[i].edad + '<br>' + '<strong>Altura: </strong>' + animals[i].altura + '<br>' + '<strong>Peso: </strong>' + animals[i].peso + '<br>' + '<strong>Tamaño: </strong>' + animals[i].tamanno + '<br>' + '<strong>Capacidad Estómago: </strong>' + animals[i].capacidadEstomago + '<br>' + '<strong>Capacidad Consumo de Agua: </strong>' + animals[i].capacidadConsumoAgua + '<br>' + '<strong>Capacidad Consumo de Alimento: </strong>' + animals[i].capacidadConsumoAlimento + '<br>' + '<strong>Capacidad de Producción: </strong>' + animals[i].capacidadProduccion + '<br>' + '<strong>Tipo de Producción: </strong>' + animals[i].tipoDeProduccion + '<br>' + '<strong>Cantidad de producto: </strong>' + animals[i].cantidadDeProducto + '<br>' + '<strong>Felicidad: </strong>' + animals[i].felicidad;
+            datosAnimal.innerHTML = '<strong>Nombre: </strong>' + currentAnimal.nombre + '<br>' + '<strong>Edad: </strong>' + currentAnimal.edad + '<br>' + '<strong>Altura: </strong>' + currentAnimal.altura + '<br>' + '<strong>Peso: </strong>' + currentAnimal.peso + '<br>' + '<strong>Tamaño: </strong>' + currentAnimal.tamanno + '<br>' + '<strong>Capacidad Estómago: </strong>' + currentAnimal.capacidadEstomago + '<br>' + '<strong>Capacidad Consumo de Agua: </strong>' + currentAnimal.capacidadConsumoAgua + '<br>' + '<strong>Capacidad Consumo de Alimento: </strong>' + currentAnimal.capacidadConsumoAlimento + '<br>' + '<strong>Capacidad de Producción: </strong>' + currentAnimal.capacidadProduccion + '<br>' + '<strong>Tipo de Producción: </strong>' + currentAnimal.tipoDeProduccion + '<br>' + '<strong>Cantidad de producto: </strong>' + currentAnimal.cantidadDeProducto + '<br>' + '<strong>Felicidad: </strong>' + currentAnimal.felicidad;
+            
             animalContainer.appendChild(datosAnimal);
             generarBotonesAnimales();
-        }
+        
     }
 
     //function updateCards() {
