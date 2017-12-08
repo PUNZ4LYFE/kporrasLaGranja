@@ -642,6 +642,9 @@ function init() {
 
         for (var i = 0; i < animals.length; i++) {
             animals[i].update();
+            if (currentAnimal !== null) {
+                updateAnimalContainer();
+            }
             //window.requestAnimationFrame(updateCards);
             //window.requestAnimationFrame(updateDatosAnimal); //Si esto se descomenta, lo que pasa es que sí actualiza todos los valores, pero los botones para comer, beber & acariciar dejan de funcionar, no sé por qué
         }
@@ -702,25 +705,22 @@ function init() {
     }
 
     function acariciar() {
-        if (currentAnimal.felicidad !== 100) {
-            currentAnimal.felicidad++;
-            currentAnimal.updateCards();
-        }
+        currentAnimal.acariciar();
     }
 
     function updateDatosAnimal() {
 
-            var animalContainer = document.getElementById('animalContainer');
-            var datosAnimal = document.getElementById('datosAnimal');
-            datosAnimal.style.fontFamily = 'verdana';
-            datosAnimal.style.color = 'black';
-            datosAnimal.style.padding = '20px';
-            datosAnimal.style.lineHeight = '25px';
-            datosAnimal.innerHTML = '<strong>Nombre: </strong>' + currentAnimal.nombre + '<br>' + '<strong>Edad: </strong>' + currentAnimal.edad + '<br>' + '<strong>Altura: </strong>' + currentAnimal.altura + '<br>' + '<strong>Peso: </strong>' + currentAnimal.peso + '<br>' + '<strong>Tamaño: </strong>' + currentAnimal.tamanno + '<br>' + '<strong>Capacidad Estómago: </strong>' + currentAnimal.capacidadEstomago + '<br>' + '<strong>Capacidad Consumo de Agua: </strong>' + currentAnimal.capacidadConsumoAgua + '<br>' + '<strong>Capacidad Consumo de Alimento: </strong>' + currentAnimal.capacidadConsumoAlimento + '<br>' + '<strong>Capacidad de Producción: </strong>' + currentAnimal.capacidadProduccion + '<br>' + '<strong>Tipo de Producción: </strong>' + currentAnimal.tipoDeProduccion + '<br>' + '<strong>Cantidad de producto: </strong>' + currentAnimal.cantidadDeProducto + '<br>' + '<strong>Felicidad: </strong>' + currentAnimal.felicidad;
-            
-            animalContainer.appendChild(datosAnimal);
-            generarBotonesAnimales();
-        
+        var animalContainer = document.getElementById('animalContainer');
+        var datosAnimal = document.getElementById('datosAnimal');
+        datosAnimal.style.fontFamily = 'verdana';
+        datosAnimal.style.color = 'black';
+        datosAnimal.style.padding = '20px';
+        datosAnimal.style.lineHeight = '25px';
+        datosAnimal.innerHTML = '<strong>Nombre: </strong>' + currentAnimal.nombre + '<br>' + '<strong>Edad: </strong>' + currentAnimal.edad + '<br>' + '<strong>Altura: </strong>' + currentAnimal.altura + '<br>' + '<strong>Peso: </strong>' + currentAnimal.peso + '<br>' + '<strong>Tamaño: </strong>' + currentAnimal.tamanno + '<br>' + '<strong>Capacidad Estómago: </strong>' + currentAnimal.capacidadEstomago + '<br>' + '<strong>Capacidad Consumo de Agua: </strong>' + currentAnimal.capacidadConsumoAgua + '<br>' + '<strong>Capacidad Consumo de Alimento: </strong>' + currentAnimal.capacidadConsumoAlimento + '<br>' + '<strong>Capacidad de Producción: </strong>' + currentAnimal.capacidadProduccion + '<br>' + '<strong>Tipo de Producción: </strong>' + currentAnimal.tipoDeProduccion + '<br>' + '<strong>Cantidad de producto: </strong>' + currentAnimal.cantidadDeProducto + '<br>' + '<strong>Felicidad: </strong>' + currentAnimal.felicidad;
+
+        animalContainer.appendChild(datosAnimal);
+        generarBotonesAnimales();
+
     }
 
     //function updateCards() {

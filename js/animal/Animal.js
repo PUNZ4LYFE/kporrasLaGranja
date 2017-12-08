@@ -68,6 +68,13 @@ var Animal = (
 
             }
 
+            Animal.prototype.acariciar = function () {
+                  if (this.felicidad <= 100) {
+                        this.felicidad++;
+                        this.updateCards();
+                  }
+            }
+
             return Animal;
       }
 )();
