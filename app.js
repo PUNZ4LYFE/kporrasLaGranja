@@ -246,6 +246,7 @@ function init() {
     }
 
     function updateAnimalContainer() {
+        
         var animalContainer = document.getElementById('animalContainer');
         var datosAnimal = document.getElementById('datosAnimal');
         datosAnimal.style.fontFamily = 'verdana';
@@ -290,7 +291,7 @@ function init() {
 
         var botonBeber = document.getElementById('botonBeber');
         botonBeber.classList.remove('hidden');
-        botonBeber.value = 'Dar de beber a los animales';
+        botonBeber.value = 'Dar de beber';
         botonBeber.id = 'botonBeber';
         botonBeber.classList.add('compraVenta');
         botonBeber.style.width = '180px';
@@ -298,7 +299,7 @@ function init() {
 
         var botonComer = document.getElementById('botonComer');
         botonComer.classList.remove('hidden');
-        botonComer.value = 'Dar de comer a los animales';
+        botonComer.value = 'Dar de comer';
         botonComer.id = 'botonComer';
         botonComer.classList.add('compraVenta');
         botonComer.style.width = '180px';
@@ -306,7 +307,7 @@ function init() {
 
         var botonAcariciar = document.getElementById('botonAcariciar');
         botonAcariciar.classList.remove('hidden');
-        botonAcariciar.value = 'Acariciar a los animales';
+        botonAcariciar.value = 'Acariciar';
         botonAcariciar.id = 'botonAcariciar';
         botonAcariciar.classList.add('compraVenta');
         botonAcariciar.style.width = '180px';
