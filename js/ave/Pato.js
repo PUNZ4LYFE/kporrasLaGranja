@@ -32,7 +32,7 @@ var Pato = (
           //this.velocidadDeProducion = 0
 
           if (this.capacidadProduccion >= this.cantidadDeProducto) {
-                if (this.tiempo <= this.tiempoDeProduction) {
+                if (this.tiempo == this.tiempoDeProduction) {
                       this.cantidadDeProducto = Math.round(this.cantidadDeProducto + this.cantidadDeProductoPorTiempo);
                       this.felicidad--;
                       this.tiempo = 0;
@@ -79,6 +79,13 @@ var Pato = (
             'Felicidad: ' + this.felicidad + '<br>' +
             'Cantidad de Producto: ' + this.cantidadDeProducto + '<br>' +
             'Apetito: ' + this.apetito;
+      }
+
+      Pato.prototype.acariciar = function () {
+            if (this.felicidad <= 100) {
+                  this.felicidad++;
+                  this.updateCards();
+            }
       }
 
 
