@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     padding: 0px;
     margin: 0px;
     width: 100%;
@@ -19,12 +20,14 @@ html, body {
     min-width: 200px;
     color: lavender;
 }
+
 .controlsContainer {
     width: 15%;
     min-width: 200px;
 }
 
-.farmContainer, .animalContainer {
+.farmContainer,
+.animalContainer {
     width: 95%;
     display: block;
     margin: 0 auto;
@@ -34,7 +37,8 @@ html, body {
 }
 
 .farmContainer {
-    background-color: rgba(255, 255, 255, 0.597);;
+    background-color: rgba(255, 255, 255, 0.597);
+    ;
 }
 
 .animalContainer {
@@ -47,7 +51,7 @@ html, body {
     width: 50%;
 }
 
-.animalCardContainer{
+.animalCardContainer {
     width: 28%;
     margin-left: 5%;
     height: 300px;
@@ -76,17 +80,22 @@ html, body {
     text-align: center;
 }
 
-#popupFormularioVaca, #popupFormularioGallina, #popupFormularioCerdo {
+#popupFormularioVaca,
+#popupFormularioGallina,
+#popupFormularioCerdo {
     background-color: rgba(255, 255, 255, 0.597);
     border-radius: 6px;
     margin-top: 20px;
     padding-top: 1px;
     padding-bottom: 10px;
     margin-left: 10px;
-
 }
 
-#popupComprar, #popupVender, #popupFormularioCompraAlimento, #popupFormularioCompraPasto, #popupFormularioCompraMaiz {
+#popupComprar,
+#popupVender,
+#popupFormularioCompraAlimento,
+#popupFormularioCompraPasto,
+#popupFormularioCompraMaiz {
     background-color: rgba(255, 255, 255, 0.597);
     padding: 10px;
     margin: 20px;
@@ -94,20 +103,30 @@ html, body {
     border: solid 0.1px black;
 }
 
-#popupComprar h4, #popupVender h4, #popupFormularioVaca h4, #popupFormularioGallina h4, #popupFormularioCerdo h4, #popupFormularioCompraAlimento h4, #popupFormularioCompraPasto h4, #popupFormularioCompraMaiz h4{
+#popupComprar h4,
+#popupVender h4,
+#popupFormularioVaca h4,
+#popupFormularioGallina h4,
+#popupFormularioCerdo h4,
+#popupFormularioCompraAlimento h4,
+#popupFormularioCompraPasto h4,
+#popupFormularioCompraMaiz h4 {
     font-size: 20px;
     color: #796465;
     font-family: verdana;
     text-align: center;
     padding: 1px;
-
 }
 
 .hidden {
     display: none;
 }
 
-#popupComprar input, #popupVender input, #popupFormularioCompraAlimento input, #popupFormularioCompraPasto input, #popupFormularioCompraMaiz input {
+#popupComprar input,
+#popupVender input,
+#popupFormularioCompraAlimento input,
+#popupFormularioCompraPasto input,
+#popupFormularioCompraMaiz input {
     display: block;
     margin: auto;
     background-color: rgb(209, 52, 80);
@@ -120,9 +139,11 @@ html, body {
     border-radius: 6px;
 }
 
-#alimentoParaComprar, #pastoParaComprar, #maizParaComprar {
+#alimentoParaComprar,
+#pastoParaComprar,
+#maizParaComprar {
     display: block;
-    margin-left:500px;
+    margin-left: 500px;
     background-color: rgb(209, 52, 80);
     border: none;
     width: 150px;
@@ -135,7 +156,7 @@ html, body {
 
 .compraVenta {
     display: block;
-    margin:auto;
+    margin: auto;
     text-align: center;
     background-color: rgb(209, 52, 80);
     border: none;
@@ -144,6 +165,7 @@ html, body {
     border-radius: 6px;
     width: 100px;
     margin-top: 20px;
+    z-index: 2;
 }
 
 .styleDatos {

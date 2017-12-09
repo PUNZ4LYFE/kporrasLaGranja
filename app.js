@@ -113,6 +113,7 @@ function init() {
     //generarTarjetas();
     generarBotones();
     mostrarDatosGranja();
+    generarBotonesAnimales()
     //document.getElementById('popupComprarVaca').classList.add('hidden');
 
     document.getElementById('comprarVaca').addEventListener('click', formularioVaca);
@@ -126,7 +127,7 @@ function init() {
     document.getElementById('comprarMaiz').addEventListener('click', formularioMaiz);
     document.getElementById('botonBeber').addEventListener('click', beber);
     document.getElementById('botonComer').addEventListener('click', comer);
-    document.getElementById('botonAcariciar').addEventListener('click', acariciar);
+
 
 
     function mostrarDatosGranja() {
@@ -246,7 +247,7 @@ function init() {
     }
 
     function updateAnimalContainer() {
-        
+
         var animalContainer = document.getElementById('animalContainer');
         var datosAnimal = document.getElementById('datosAnimal');
         datosAnimal.style.fontFamily = 'verdana';
@@ -266,8 +267,9 @@ function init() {
             currentAnimal.tipoDeProduccion + '<br>' + '<strong>Cantidad de producto: </strong>' +
             currentAnimal.cantidadDeProducto;
 
-        animalContainer.appendChild(datosAnimal);
-        generarBotonesAnimales();
+        //animalContainer.appendChild(datosAnimal);
+        //generarBotonesAnimales();
+        botonProducir.classList.remove('hidden');
     }
 
     function onAnimalCardClick(event) {
@@ -281,13 +283,13 @@ function init() {
 
     function generarBotonesAnimales() {
         var botonProducir = document.getElementById('botonProducir');
-        document.getElementById('botonProducir').addEventListener('click', recogerProducto);
         botonProducir.classList.remove('hidden');
         botonProducir.value = 'Recoger los productos';
         botonProducir.id = 'botonProducir';
         botonProducir.classList.add('compraVenta');
         botonProducir.style.width = '180px';
         botonProducir.style.textAlign = 'center';
+        botonProducir.addEventListener('click', recogerProducto, false);
 
         var botonBeber = document.getElementById('botonBeber');
         botonBeber.classList.remove('hidden');
@@ -312,11 +314,12 @@ function init() {
         botonAcariciar.classList.add('compraVenta');
         botonAcariciar.style.width = '180px';
         botonAcariciar.style.textAlign = 'center';
+        botonAcariciar.addEventListener('click', acariciar, false);
 
-        animalContainer.appendChild(botonProducir);
-        animalContainer.appendChild(botonBeber);
-        animalContainer.appendChild(botonComer);
-        animalContainer.appendChild(botonAcariciar);
+        // animalContainer.appendChild(botonProducir);
+        // animalContainer.appendChild(botonBeber);
+        // animalContainer.appendChild(botonComer);
+        // animalContainer.appendChild(botonAcariciar);
     }
 
     function getAnimalByName(target) {
@@ -665,8 +668,9 @@ function init() {
                 break;
 
             case 'gallina':
-                inventario.cantidadHuevos += currentAnimal.cantidadDeProducto;
-                currentAnimal.cantidadDeProducto = 0;
+                currentAnimal.recogerProducto();
+                // inventario.cantidadHuevos += currentAnimal.cantidadDeProducto;
+                // currentAnimal.cantidadDeProducto = 0;
                 break;
 
             case 'pato':
@@ -719,8 +723,8 @@ function init() {
         datosAnimal.style.lineHeight = '25px';
         datosAnimal.innerHTML = '<strong>Nombre: </strong>' + currentAnimal.nombre + '<br>' + '<strong>Edad: </strong>' + currentAnimal.edad + '<br>' + '<strong>Altura: </strong>' + currentAnimal.altura + '<br>' + '<strong>Peso: </strong>' + currentAnimal.peso + '<br>' + '<strong>Tamaño: </strong>' + currentAnimal.tamanno + '<br>' + '<strong>Capacidad Estómago: </strong>' + currentAnimal.capacidadEstomago + '<br>' + '<strong>Capacidad Consumo de Agua: </strong>' + currentAnimal.capacidadConsumoAgua + '<br>' + '<strong>Capacidad Consumo de Alimento: </strong>' + currentAnimal.capacidadConsumoAlimento + '<br>' + '<strong>Capacidad de Producción: </strong>' + currentAnimal.capacidadProduccion + '<br>' + '<strong>Tipo de Producción: </strong>' + currentAnimal.tipoDeProduccion + '<br>' + '<strong>Cantidad de producto: </strong>' + currentAnimal.cantidadDeProducto + '<br>' + '<strong>Felicidad: </strong>' + currentAnimal.felicidad;
 
-        animalContainer.appendChild(datosAnimal);
-        generarBotonesAnimales();
+        // animalContainer.appendChild(datosAnimal);
+        //generarBotonesAnimales();
 
     }
 
