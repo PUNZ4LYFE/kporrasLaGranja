@@ -6,6 +6,7 @@ var Vaca = (
                   this.tipo = 'vaca';
                   this.felicidad = 50;
                   this.apetito = 50;
+                  this.tiempoDeProduction = 1 * this.FRAMERATE;
                   /*this.nombre = pnombre;
                   this.edad = pedad;
                   this.altura = paltura;
@@ -33,7 +34,7 @@ var Vaca = (
             //this.velocidadDeProducion = 0
 
             if (this.capacidadProduccion >= this.cantidadDeProducto) {
-                  if (this.tiempo <= this.tiempoDeProduction && this.felicidad > 0) {
+                  if (this.tiempo === this.tiempoDeProduction) {
                         this.cantidadDeProducto = Math.round(this.cantidadDeProducto + this.cantidadDeProductoPorTiempo);
                         this.felicidad--;
                         //this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
