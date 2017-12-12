@@ -88,6 +88,11 @@ var Pato = (
             }
       }
 
+      Pato.prototype.recogerProducto = function(inventario){
+            inventario.cantidadHuevos += this.cantidadDeProducto;
+            this.cantidadDeProducto = 0;
+        }
+
 
 	return Pato;
 	}
