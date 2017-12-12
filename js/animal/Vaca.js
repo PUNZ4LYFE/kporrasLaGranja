@@ -85,6 +85,11 @@ var Vaca = (
             'Apetito: ' + this.apetito;
       }
 
+      Vaca.prototype.recogerProducto = function(inventario){
+            inventario.cantidadLeche += this.cantidadDeProducto;
+            this.cantidadDeProducto = 0;
+        }
+
 
       return Vaca;
 }
