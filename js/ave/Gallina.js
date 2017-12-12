@@ -84,6 +84,11 @@ var Gallina = (
 
             }
 
+            Gallina.prototype.recogerProducto = function(inventario){
+                inventario.cantidadHuevos += this.cantidadDeProducto;
+                this.cantidadDeProducto = 0;
+            }
+
 
             return Gallina;
       }
