@@ -60,10 +60,6 @@ var Animal = (
 
             }
 
-            Animal.prototype.recogerProducto = function () {
-
-            }
-
             Animal.prototype.update = function () {
 
             }
