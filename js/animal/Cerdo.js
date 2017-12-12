@@ -81,6 +81,11 @@ var Cerdo = (
                   'Apetito: ' + this.apetito;
             }
 
+            Cerdo.prototype.recogerProducto = function(inventario){
+                  inventario.cantidadTocino += this.cantidadDeProducto;
+                  this.cantidadDeProducto = 0;
+              }
+
             return Cerdo;
       }
 )();
