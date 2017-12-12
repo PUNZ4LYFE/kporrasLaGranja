@@ -661,29 +661,9 @@ function init() {
 
     function recogerProducto() {
 
-        switch (currentAnimal.tipo) {
-            case 'vaca':
-                inventario.cantidadLeche += currentAnimal.cantidadDeProducto;
-                currentAnimal.cantidadDeProducto = 0;
-                break;
+        currentAnimal.recogerProducto(inventario);
 
-            case 'gallina':
-                currentAnimal.recogerProducto();
-                // inventario.cantidadHuevos += currentAnimal.cantidadDeProducto;
-                // currentAnimal.cantidadDeProducto = 0;
-                break;
-
-            case 'pato':
-                inventario.cantidadHuevos += currentAnimal.cantidadDeProducto;
-                currentAnimal.cantidadDeProducto = 0;
-                break;
-
-            case 'cerdo':
-                inventario.cantidadTocino += currentAnimal.cantidadDeProducto;
-                currentAnimal.cantidadDeProducto = 0;
-                break;
-
-        }
+       
         currentAnimal.updateCards();
         currentAnimal.update();
 
